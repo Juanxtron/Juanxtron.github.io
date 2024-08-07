@@ -1,0 +1,226 @@
+<!DOCTYPE HTML>
+<!--
+	Phantom by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Data architecture</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<div class="inner">
+
+							<!-- Logo -->
+								<a href="index.html" class="logo">
+									<span class="symbol"><img src="images/arrowleft.svg" alt="" /></span><span class="title">Projects</span>
+								</a>
+
+							<!-- Nav -->
+								<nav>
+									<ul>
+										<li><a href="#menu">Menu</a></li>
+									</ul>
+								</nav>
+
+						</div>
+					</header>
+
+				<!-- Menu -->
+					<nav id="menu">
+						<h2>Menu</h2>
+						<ul>
+							<li><a href="index.html">Home</a></li>
+						</ul>
+					</nav>
+
+				<!-- Main -->
+                    <div id="main">
+                        <div class="inner">
+                            <h1>Data architecture</h1>
+
+                            <h2>Course recommended</h2>
+                            <div id="course-map">
+                                <img src="images/Mapgptprompt.jpg" usemap="#coursemapgpt" alt="Course Map">
+
+                                <map name="coursemapgpt">
+                                    <!-- Definir las áreas clickeables sobre la imagen -->
+                                    <!-- Ejemplo: Coordenadas de la primera área -->
+                                    <area shape="rect" coords="0,0,6000,200" href="javascript:void(0);" alt="Course 20" onclick="showPopup('course20')">
+                                    <!-- Añadir más áreas según sea necesario -->
+                                </map>
+                            </div>
+
+
+
+                            <!-- Pop-up modals -->
+                            <div id="popup-course20" class="popup">
+                                <div class="popup-content">
+                                    <span class="close" onclick="closePopup('course20')">&times;</span>
+                                    <h2>ChatGPT Prompt Engineering for Developers</h2>
+                                    <button onclick="showDescription('course20')">Course description</button>
+                                    <button onclick="showCertificate('Prompengeniering')">View certificate</button>
+                                </div>
+                            </div>
+
+
+                            <!-- Pop-up modals for Descriptions -->
+                            <div id="popup-description-course20" class="popup">
+                                <div class="popup-content">
+                                    <span class="close" onclick="closePopup('description-course20')">&times;</span>
+                                    <h2>Description course</h2>
+                                    <p>This course, "ChatGPT Prompt Engineering for Developers," teaches how to utilize large language models (LLMs) to build innovative and powerful applications using the OpenAI API. Taught by Isa Fulford (OpenAI) and Andrew Ng (DeepLearning.AI), the course covers how LLMs work, best practices for prompt engineering, and practical applications like summarizing, inferring, transforming, and expanding text. Additionally, the course introduces key principles for writing effective prompts and demonstrates how to build custom chatbots, all through hands-on examples in a Jupyter notebook environment.</p>
+                                </div>
+                            </div>
+
+
+                            <h2></h2>
+                            <h2>Learning Journey</h2>
+                            <div class="content">
+                                <p>Throughout my learning journey in the "ChatGPT Prompt Engineering for Developers" course, I delved into various core concepts and hands-on projects that sharpened my skills in using large language models (LLMs) for practical applications.</p>
+
+                                <h3>Guidelines for Prompting</h3>
+                                <p>I learned two fundamental principles of prompt engineering: writing clear and specific instructions, and giving the model time to "think." These principles were applied through tactics such as using delimiters, requesting structured outputs, and implementing "few-shot" prompting.</p>
+
+                                <h3>Iterative Prompt Development</h3>
+                                <p>This module focused on refining prompts iteratively to generate precise outputs. I applied this to create marketing descriptions from product fact sheets, adjusting the prompts to handle issues like text length and focus on relevant details.</p>
+
+                                <h3>Summarizing</h3>
+                                <p>I explored how to summarize text with a focus on specific topics, learning to generate concise summaries tailored to different departments, such as shipping or pricing, within an organization.</p>
+
+                                <h3>Inferring</h3>
+                                <p>In this module, I learned to infer sentiment, emotions, and topics from product reviews and news articles. I also worked on extracting key information like product names and companies mentioned in the reviews.</p>
+
+                                <h3>Transforming</h3>
+                                <p>This module covered text transformation tasks, including translation, spelling and grammar checking, tone adjustment, and format conversion. I practiced these techniques by transforming texts into different formats and styles.</p>
+
+                                <h3>Expanding</h3>
+                                <p>Finally, I applied prompt engineering techniques to generate tailored customer service emails based on the sentiment of customer reviews, creating responses that are professional and contextually relevant.</p>
+
+                                <h3>Hands-on Project</h3>
+                                <p>As part of my hands-on experience, I developed a customized GPT for real estate marketing strategies. This AI-driven assistant helps with SEO optimization, A/B testing, content creation in various styles, and evaluates property prices for sales and rentals in Colombia. The project also includes capabilities for generating visualizations, answering specific property-related queries, and providing guidance on legal aspects of buying, selling, or renting properties in Colombia, making it a comprehensive tool for real estate professionals.</p>
+                            </div>
+
+                            <h2>Customized GPT funtionalities</h2>
+                            <h2>Project Overview</h2>
+                            <p>This project involved the development of a customized GPT, named <strong>Asistente para Asesores Inmobiliarios en Colombia</strong>, to assist with real estate marketing strategies and evaluate property prices for sale and rent in Colombia. The model uses data-driven insights to respond to inquiries and generate valuable content for real estate professionals.</p>
+                            <p>The GPT was designed with various specialized functionalities, including SEO optimization, content generation for A/B testing, and answering legal questions related to the buying, selling, or renting of properties in Colombia.</p>
+
+                            <h2>Prompt Engineering Techniques</h2>
+                            <p>Throughout the project, the following prompt engineering techniques were utilized:</p>
+                            <ul>
+                                <li><strong>Summarizing:</strong> Used to condense large amounts of data into digestible insights for property listings and market trends.</li>
+                                <li><strong>Inferring:</strong> Employed to detect sentiment in user inquiries and adjust responses accordingly, as well as to extract relevant information from property descriptions.</li>
+                                <li><strong>Expanding:</strong> Applied to generate comprehensive responses for customer service interactions and detailed property descriptions.</li>
+                                <li><strong>Transforming:</strong> Used for translating technical details into user-friendly content and adapting the tone based on the audience.</li>
+                            </ul>
+
+                            <h2>Customized Instructions and Functionalities</h2>
+                            <p>The GPT model was trained to follow specific instructions tailored to the real estate context:</p>
+                            <ul>
+                                <li><strong>Language and Style:</strong> Responses are provided in clear and precise Spanish, with a formal tone for technical recommendations and a friendly tone for property price inquiries.</li>
+                                <li><strong>Greeting and Farewell:</strong> The conversation starts with "Hola, soy tu asesor inmobiliario de confianza. ¿En qué te puedo ayudar hoy?" and ends with "Espero haber sido de ayuda. Si tienes más preguntas sobre el mercado inmobiliario en Bogotá, no dudes en preguntar. ¡Buena suerte con tu propiedad!"</li>
+                                <li><strong>Content of Responses:</strong> The model offers SEO suggestions, marketing strategies, property price evaluations using data from "inmuebles_bogota" and "Inmuebles_Disponibles_para_Arrendamiento_con_barrios," and legal advice using the files "RequisitoscompraventaCasas" and "Requisitosarriendo."</li>
+                                <li><strong>Data Handling:</strong> The model uses public data from "Datos abiertos Colombia" and applies necessary transformations, such as reformatting addresses and extracting neighborhood information for more accurate property evaluations.</li>
+                                <li><strong>Error Management:</strong> If information is not found, the model politely informs the user that it will continue searching, and if no results are found, it responds with, "Lo siento, pero no hay información disponible para lo que estás pidiendo en este momento."</li>
+                            </ul>
+
+
+                            <h3>Sample Conversations</h3>
+                            <p>Here are some sample prompts that the customized GPT can handle:</p>
+                            <ul>
+                                <li>"Quiero vender una propiedad, ¿puedes ayudarme a crear un anuncio efectivo?"</li>
+                                <li>"Estoy buscando estrategias para optimizar mi página inmobiliaria en Google, ¿qué me recomiendas?"</li>
+                                <li>"Ayúdame a encontrar las propiedades más económicas para arrendar en Usaquén."</li>
+                            </ul>
+
+                            <span class="image"><img src="images/Imagengptpersonalziadocaracteristicas.jpg" alt="" /></span>
+
+                            <h2>Data Sources and Processing</h2>
+                            <p>Data used to train and refine the model was gathered from various public sources and processed to ensure accuracy:</p>
+                            <ul>
+                                <li><strong>Requisitos Compra/Venta and Requisitos Arriendo:</strong> These JSON files were created using publicly available information on property regulations in Bogotá, compiled and structured with the help of ChatGPT-4.</li>
+                                <li><strong>Inmuebles Bogotá and Inmuebles Disponibles para Arrendar:</strong> Sourced from "Datos Abiertos Colombia," these datasets include details on property types, descriptions, and pricing, with necessary format adjustments made using Tableau Prep and custom Python scripts for accurate analysis.</li>
+                            </ul>
+
+                            <h3>Example of Data Processing</h3>
+
+                            <p>For the <strong>Inmuebles Bogotá</strong> dataset containing house prices in Bogotá for 2024. Several Tableau techniques were employed, including <strong>Data Transformation</strong> to adjust the data structure as needed. Specific tasks included <strong>Removing Duplicates</strong> to eliminate redundant entries and <strong>Handling Null Values</strong> to address any missing data. Additionally, operations like <strong>Splitting and Merging Fields</strong> were performed to reformat and optimize the data for subsequent analysis.</p>
+                            <p>As shown in the video, a <strong>Calculated Field</strong> was created using a formula to correct the price format issues. Originally, prices that should have been in millions were misrepresented; for example, 23 was displayed instead of 230 million pesos, and values in billions of pesos (e.g., 2,300,000,000) appeared incorrectly as 2.3. The calculated field adjusted these values to reflect the correct monetary amounts, ensuring that the data was accurately represented for analysis.</p>
+                            <span class="video"><video src="videos/Grabaciónlimpiezadatos.mp4" controls controlslist="nodownload"></video></span>
+
+                            <h3></h3>
+                            <h3></h3>
+                            <p>For the "Inmuebles_Disponibles_para_Arrendar" dataset, a Python code was used to correct address formatting and extract neighborhood information:</p>
+                            <ul>
+                                <li><strong>Address Format Correction:</strong> The dataset <em>Inmuebles_Disponibles_para_Arrendamiento_con_barrios</em> initially contained addresses in a non-standard format, which made it difficult to extract neighborhood information. To resolve this, a Python script was developed to:
+                                    <ul>
+                                        <li><strong>Standardize Address Terms:</strong> Replace abbreviations like "CL" and "KR" with their full forms "Calle" and "Carrera."</li>
+                                        <li><strong>Combine Street Numbers:</strong> Merge separated street numbers into a standardized format, ensuring consistency.</li>
+                                        <li><strong>Add Location Context:</strong> Append ", Bogotá, Colombia" to each address to provide clear context for geocoding.</li>
+                                    </ul>
+                                </li>
+                                <li><strong>Neighborhood Extraction:</strong> Once the addresses were standardized, the next step was to extract the neighborhood (or "barrio") information. This was done by:
+                                    <ul>
+                                        <li><strong>Geocoding:</strong> Using the Nominatim service from the <code>geopy</code> library, each corrected address was geocoded to obtain latitude and longitude.</li>
+                                        <li><strong>Reverse Geocoding:</strong> With these coordinates, a reverse geocoding process was used to retrieve detailed location information, specifically focusing on identifying the neighborhood name.</li>
+                                        <li><strong>Handling Errors:</strong> If the neighborhood couldn't be identified, a default response "Barrio no encontrado" was used, and any errors during processing were caught and logged for review.</li>
+                                    </ul>
+                                </li>
+                                <li><strong>Data Output:</strong> After processing the data, the cleaned and enriched dataset, now including a corrected address and neighborhood information, was saved to a new CSV file. This file was then used by the GPT model to provide accurate property evaluations based on the location.</li>
+                            </ul>
+                            
+                            <h2>SEO Optimization and A/B Testing</h2>
+                            <p>To further enhance the capabilities of the model, it was trained to assist with SEO optimization and A/B testing strategies. This involved the following steps:</p>
+                            <ul>
+                                <li><strong>Data Collection:</strong> The model was trained using public information on SEO best practices and A/B testing methodologies.</li>
+                                <li><strong>API Integration:</strong> The model was connected to the Google Keyword Planner API to access real-time data and generate optimized keywords for content targeting.</li>
+                                <li><strong>Content Recommendations:</strong> Based on the data from the keyword planner, the model provides recommendations for optimizing website content and generating A/B test variants to improve user engagement and conversion rates.</li>
+                            </ul>
+                            
+                            <h2>Demostration</h2>
+                            <span class="video"><video src="videos/VideofuncionamientoGPT.mp4" controls controlslist="nodownload"></video></span>
+                            <h2></h2>
+
+                            <h2>Want to see the instructions given to the GPT, the JSON file to connect to the Google Ads API, and the code for cleaning the "Inmuebles_Disponibles_para_Arrendar" dataset? <a href="https://github.com/Juanxtron/CustomGPT/tree/main/CustomGPT">Click here</a>.</h2>
+                        </div>
+                    </div>
+
+
+				<!-- Footer -->
+					<footer id="footer">
+						<div class="inner">
+							<section>
+								<h2>Follow</h2>
+								<ul class="icons">
+									<li><a href="https://www.linkedin.com/in/juan-pablo-cancelado-caro/" class="icon brands style2 fa-linkedin"><span class="label">Linkedin</span></a></li>
+									<li><a href="https://github.com/Juanxtron/Juanxtron" class="icon brands style2 fa-github"><span class="label">GitHub</span></a></li>
+								</ul>
+								</ul>
+							</section>
+							<ul class="copyright">
+							</ul>
+						</div>
+					</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+            <script src="assets/js/custom.js"></script>
+
+	</body>
+</html>

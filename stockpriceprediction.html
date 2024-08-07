@@ -1,0 +1,201 @@
+<!DOCTYPE HTML>
+<!--
+	Phantom by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Portfolio manager with AI</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<div class="inner">
+
+							<!-- Logo -->
+								<a href="index.html" class="logo">
+									<span class="symbol"><img src="images/arrowleft.svg" alt="" /></span><span class="title">Projects</span>
+								</a>
+
+							<!-- Nav -->
+								<nav>
+									<ul>
+										<li><a href="#menu">Menu</a></li>
+									</ul>
+								</nav>
+
+						</div>
+					</header>
+
+				<!-- Menu -->
+					<nav id="menu">
+						<h2>Menu</h2>
+						<ul>
+							<li><a href="index.html">Home</a></li>
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+							<h1>Portfolio manager with AI</h1>
+                            <span class="image main"><img src="images/buyandsellstocksportada.jpg" alt="" /></span>
+                            <span class="image main"><img src="images/portfolioperformanceportada.jpg" alt="" /></span>
+							<h2>Tools and Technologies used</h2>
+                            <p>- Python: Python was the primary programming language used to develop the backend of the web application. Its extensive libraries and frameworks made it an ideal choice for data analysis, machine learning, and web development.</p>
+                            <p>- Keras and TensorFlow: Keras, a high-level neural networks API, was used alongside TensorFlow as the backend to create, train, and deploy the Long Short-Term Memory (LSTM) model for stock price prediction. The LSTM model was trained on historical stock prices to capture temporal dependencies and make accurate short-term predictions.</p>
+                            <p>- HTML5: HTML5 was utilized to create the frontend of the web application. Dash, a Python framework for building web applications, leverages HTML5 to render the layout and visual components of the dashboard, providing an interactive user experience.</p>
+                            <p>- Firebase: Firebase was used for user authentication and real-time database services. Firebase Authentication managed the user login and registration processes, ensuring secure access to the application. The Firebase Realtime Database stored user-specific data, such as portfolio information and transaction history, allowing seamless data retrieval and updates.</p>
+                            <h2>Theoretical Foundations</h2>
+							<p>- Conditional Value at Risk (C-VaR).</p>
+                            <p>- GARCH Model.</p>
+                            <p>- Logarithmic Returns.</p>
+                            <p>- Portfolio Returns.</p>
+							<p>- Garman-Klass Volatility.</p>
+							<p>- Fama-French Three-Factor Model.</p>
+							<p>- LSTM Neural Network.</p>
+							<p>- SARIMA Model.</p>
+							<p>- The use of this Theoretical in this project will be explained later.</p>
+							<h2>What is the purpose of this web application?</h2>
+							<h2>"Empowering Users to Make Informed Stock Investment Decisions" that was my first thinking when i started this project</h2>
+							<p>This web application is designed to provide users with a powerful tool for managing their stock portfolios. By offering comprehensive analysis, accurate predictions, and effective optimization strategies, it aims to help users make well-informed investment decisions. The application allows users to securely log in and access detailed information about their investments. It provides insights into historical performance, predicts future stock prices using advanced models, and assesses the risk of individual stocks and portfolios. Additionally, users can buy and sell stocks directly within the platform and receive personalized recommendations for optimizing their portfolios to maximize returns and minimize risk. Interactive graphs and clear explanations are provided to help users understand their investments and navigate the stock market with confidence.
+								
+								</p>
+							<h2>it is important to note that all the money shown in the current application is fictitious.</h2>
+							<h2>Web Page main features</h2>
+
+							<h2>Sign in</h2>
+							<span class="video"><video src="videos/singin_portfolio_manager.mp4" controls controlslist="nodownload"></video></span>
+
+							<h2>Log in</h2>
+							<span class="video"><video src="videos/logout_portfolio_manager.mp4" controls controlslist="nodownload"></video></span>
+							
+							<h2>Manage Portfolio funtionalitie</h2>
+							<span class="video"><video src="videos/Manage_portfolio_portfolio_manager.mp4" controls controlslist="nodownload"></video></span>
+							
+							<h2>Predictions with Neural Network in the short-term</h2>
+							<span class="video"><video src="videos/predictedprices_portfolio_manager.mp4" controls controlslist="nodownload"></video></span>
+							
+							<h2>Predictions with SARIMA model in the long-medium-term</h2>
+							<span class="video"><video src="videos/Prediction_Sarima_Portfolio_Manager.mp4" controls controlslist="nodownload"></video></span>
+							
+							<h2>Buy and Sell stocks</h2>
+							<span class="video"><video src="videos/buy_sell_stocks.mp4" controls controlslist="nodownload"></video></span>
+							
+							<h2>Recomendations with optimization</h2>
+							<span class="video"><video src="videos/optimización_portfolio_manager.mp4" controls controlslist="nodownload"></video></span>
+							
+							<h2>Theoretical Foundations and Their Use in the Code</h2>
+
+							<h2>Conditional Value at Risk (C-VaR)</h2>
+							<p>Conditional Value at Risk (C-VaR) measures the risk of extreme losses in a portfolio. It is the expected loss given that the loss has exceeded the Value at Risk (VaR) at a certain confidence level. C-VaR is useful for understanding the potential downside risk beyond the VaR threshold.</p>
+							<span class="image main"><img src="images/cvarcode.jpg" alt="" /></span>
+							<p>Source: https://www.researchgate.net/figure/Conditional-Value-at-Risk-CVaR-Formula-11_fig3_361832965</p>
+							<p>In the code, C-VaR is calculated for the stock returns and displayed as a measure of maximum expected loss over the selected time period. The C-VaR calculation is done using the calculate_cvar function, and the results are presented in the application's dashboard.</p>
+							<span class="image main"><img src="images/cvar.jpg" alt="" /></span>
+							
+							<h2>GARCH Model.</h2>
+							<p>The Generalized Autoregressive Conditional Heteroskedasticity (GARCH) model is used to predict the volatility of stock returns. It models the variance of returns as a function of past variances and past squared returns, capturing volatility clustering observed in financial time series.</p>
+							<span class="image main"><img src="images/garch.jpg" alt="" /></span>
+							<p>The GARCH model is used to predict the volatility of stock returns. This predicted volatility is then displayed as part of the stock information, helping users understand the risk associated with their investments.</p>
+							<span class="image main"><img src="images/garchcode.jpg" alt="" /></span>
+							
+							<h2>Logarithmic Returns.</h2>
+							<p>Logarithmic returns are used to measure the continuous compounding rate of return over a period. They are preferred in financial modeling due to their time-additive properties.</p>
+							<span class="image main"><img src="images/log_return.jpg" alt="" /></span>
+							<p>In the code, logarithmic returns are calculated for each stock and used as input features for the LSTM model and other calculations, such as C-VaR and portfolio optimization.</p>
+							<span class="image main"><img src="images/log_return_code.jpg" alt="" /></span>
+							
+							<h2>Portfolio Returns</h2>
+							<p>Portfolio returns are calculated based on the weighted average returns of individual assets in the portfolio. In the code, portfolio returns are used to assess the overall performance of the user's investments. This is part of the portfolio information displayed in the dashboard.</p>
+							<span class="image main"><img src="images/portfolioreturn.jpg" alt="" /></span>
+							
+							<h2>Garman-Klass Volatility</h2>
+							<p>The Garman-Klass estimator is used to estimate the volatility of stock prices based on high, low, opening, and closing prices. It provides a more accurate measure compared to simple standard deviation.</p>
+							<span class="image main"><img src="images/garmanklass.jpg" alt="" /></span>
+							<p>The Garman-Klass volatility is calculated and used to assess the risk of individual stocks.</p>
+							<span class="image main"><img src="images/garmanklass_code.jpg" alt="" /></span>
+							
+							<h2>Fama-French Three-Factor Model</h2>
+							<p>The Fama-French model extends the Capital Asset Pricing Model (CAPM) by adding two factors to account for size and value effects. The three factors are market risk premium, size factor (SMB), and value factor (HML).</p>
+							<span class="image main"><img src="images/capm3factors.jpg" alt="" /></span>
+							<p>Fama-French model is not directly implemented, but the concepts of risk and return are incorporated into the portfolio optimization process.</p>
+							
+							<h2>LSTM Neural Network</h2>
+							<p>Long Short-Term Memory (LSTM) networks are a type of Recurrent Neural Network (RNN) designed to capture long-term dependencies in sequential data. They are particularly effective for time series forecasting due to their ability to remember past information for long periods.</p>
+							<p>The LSTM model is used to make short-term predictions of stock prices, which are then displayed on the dashboard.</p>
+							
+							<h2>How the LSTM Model Works</h2>
+							<p>The LSTM model in this code is designed to predict stock prices based on historical data and various technical indicators. Here is a detailed explanation of how it works:</p>
+							
+							<h3>Data Collection and Preprocessing:</h3>
+							<p>Historical stock price data is collected using the yfinance library. Several technical indicators are calculated and added to the dataset: Simple Moving Averages (SMA), Relative Strength Index (RSI), and Moving Average Convergence Divergence (MACD). Logarithmic returns are also calculated.</p>
+							
+							<h3>Data Normalization:</h3>
+							<p>The data is normalized using MinMaxScaler to ensure that all input features are scaled to a range between 0 and 1. This is important for the performance of the LSTM model.</p>
+							
+							<h3>Training Data Preparation:</h3>
+							<p>The dataset is split into training and testing sets. The training set consists of 95% of the data. Training data is prepared by creating sequences of 60 days of historical data to predict the next day's stock price.</p>
+							
+							<h3>LSTM Model Creation and Training:</h3>
+							<p>An LSTM model is created using the Keras library. It consists of two LSTM layers and two dense layers. The model is trained on the training data for one epoch.</p>
+							
+							<h3>Model Serialization:</h3>
+							<p>The trained LSTM model and the scaler are saved to disk using Keras and joblib, respectively. This serialization allows for quick loading and usage of the model in the web application, improving performance and reducing the need for retraining.</p>
+							
+							<h2>SARIMA Model</h2>
+							<p>The Seasonal Autoregressive Integrated Moving Average (SARIMA) model is used for time series forecasting, particularly for capturing seasonality and trends in the data. The model was tested using the Augmented Dickey-Fuller (ADF) test to ensure stationarity, and differencing was applied to achieve better results.</p>
+							<span class="image main"><img src="images/sarima.jpg" alt="" /></span>
+							<p>SARIMA model is used for medium and long-term predictions of stock prices. The SARIMA predictions provide insights into future trends and seasonality in stock prices.</p>
+							
+							<h2>Logarithmic Returns over multiple periods for Portfolio Performance</h2>
+							<p>Logarithmic returns are used to measure the continuous compounding rate of return over multiple periods. They are particularly useful for evaluating the performance of the portfolio over time.</p>
+							<span class="image main"><img src="images/logaritmic_return_variusperiods.jpg" alt="" /></span>
+							<p>In the code, logarithmic returns are calculated to determine the portfolio's overall performance since the initial purchase. This is displayed on the dashboard to inform users about the gains or losses of their investments.</p>
+							
+							
+							
+							
+							
+							<h2>Future Implementations</h2>
+							<p>We aim to implement a functionality that will teach personal finance using AI, providing users with personalized financial advice and educational content. Additionally, it is important to note that all the money shown in the current application is fictitious. We plan to implement a feature in the future that will allow users to add and manage real money within the application, enhancing its practicality and usefulness for personal financial management.</p>
+                            <h2>To view the complete code and download it, visit this <a href="https://github.com/Juanxtron/Juanxtron/tree/main/depressiontrackerapp" target="_blank">link</a>.</h2>
+
+                        </div>
+					</div>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<div class="inner">
+							<section>
+								<h2>Follow</h2>
+								<ul class="icons">
+									<li><a href="https://www.linkedin.com/in/juan-pablo-cancelado-caro/" class="icon brands style2 fa-linkedin"><span class="label">Linkedin</span></a></li>
+									<li><a href="https://github.com/Juanxtron/Juanxtron" class="icon brands style2 fa-github"><span class="label">GitHub</span></a></li>
+								</ul>
+								</ul>
+							</section>
+							<ul class="copyright">
+							</ul>
+						</div>
+					</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

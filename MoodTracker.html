@@ -1,0 +1,109 @@
+<!DOCTYPE HTML>
+<!--
+	Phantom by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Chatbot page</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<div class="inner">
+
+							<!-- Logo -->
+								<a href="index.html" class="logo">
+									<span class="symbol"><img src="images/arrowleft.svg" alt="" /></span><span class="title">Projects</span>
+								</a>
+
+							<!-- Nav -->
+								<nav>
+									<ul>
+										<li><a href="#menu">Menu</a></li>
+									</ul>
+								</nav>
+
+						</div>
+					</header>
+
+				<!-- Menu -->
+					<nav id="menu">
+						<h2>Menu</h2>
+						<ul>
+							<li><a href="index.html">Home</a></li>
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+							<h1>Mood Tracker</h1>
+                            <span class="image main"><img src="images/portadamoodtracker.jpg" alt="" /></span>
+                            <p>Depression affects 4.7% of Colombians, which is higher than the global average of 3.8%. This translates to about 2,425,000 people, highlighting a critical need for effective mental health interventions. Despite its prevalence, depression remains largely untreated in Colombia. The National Health Observatory reports that only 20% of adults with major depression receive specialized care, indicating an 80% treatment gap. Barriers such as stigma, lack of awareness, and limited access to timely medical services contribute to this issue.
+
+								This app serves as a crucial tool for individuals recovering from depression post-hospitalization. It provides medication reminders, a platform to record and analyze emotional states with AI, and an emergency alert system that notifies pre-established contacts if the user is at risk. These functionalities address the urgent need for accessible and supportive mental health care in Colombia, helping individuals manage their condition more effectively.
+								
+								</p>
+                            <h2>Register Screen</h2>
+							<span class="video"><video src="videos/loginscreen.mp4" controls controlslist="nodownload"></video></span>
+                            <p>The Register Screen is the initial step for users to create an account. It includes fields for email, password, and emergency contact information. Users must also authorize the handling of their data and consent to the app sending messages to their emergency contact in case of an emergency. The user information is securely stored using Firebase Authentication API, which ensures password security with advanced technologies. Additionally, the email and contact information are saved in a real-time database using Firebase. To enhance security, the password must meet the requirement of being more than six characters long.</p>
+                            <h2>Login Screen</h2>
+							<span class="video"><video src="videos/registerscreen.mp4" controls controlslist="nodownload"></video></span>
+							<span class="video"><video src="videos/registerscreenuno.mp4" controls controlslist="nodownload"></video></span>
+                            <p>The Login Screen allows users to access their accounts by entering the correct email and password. If the provided credentials do not match the stored information, access will be denied. This screen ensures that only authorized users can log into the app, maintaining the privacy and security of user data.</p>
+                            <h2>Webpage</h2>
+							<span class="image main"><img src="images/Webpage.jpg" alt="" /></span>
+                            <p>The Webpage serves as the central hub where users can access all the functionalities of the app. It provides options to change passwords and update contact information. In the future, additional tools and features will be made available to enhance user experience and provide more comprehensive support for managing depression and related activities.</p>
+                            <h2>Change Settings</h2>
+							<span class="video"><video src="videos/settings.mp4" controls controlslist="nodownload"></video></span>
+                            <span class="video"><video src="videos/settingsuno.mp4" controls controlslist="nodownload"></video></span>
+                            <p>The Change Settings page allows users to update their password and contact information. This ensures that users can keep their details current and secure, maintaining the integrity of their emergency contact information and account security.</p>
+                            <h2>Mood Tracker</h2>
+                            <<span class="video"><video src="videos/moodtracker.mp4" controls controlslist="nodownload"></video></span>
+                            <p>The Mood Tracker page lets users record their current emotional state. This feature uses artificial intelligence to predict the user's sentiment, employing technologies such as Flask, the Transformers library, the sentiment_analysis_spanish library, and the AutoModelForSequenceClassification and AutoTokenizer from the Hugging Face ecosystem. Based on the recorded sentiment, the app presents either a funny or motivational video to improve the user's mood. If the sentiment is identified as depressed, a message is automatically sent to the emergency contact established during registration. These messages are handled using the Vonage API, ensuring timely and reliable communication in critical situations.</p>
+                            <h2>Reminder Medication</h2>
+                            <span class="video"><video src="videos/reminder.mp4" controls controlslist="nodownload"></video></span>
+                            <span class="image main"><img src="images/reminder_messages.jpeg" alt="" /></span>
+							<span class="image main"><img src="images/remindermessages_dos.jpeg" alt="" /></span>
+							<p>The Reminder Medication page is designed to help users manage their medication schedule. Users can enter the medication name, dosage, and the interval at which they need to take it. The app then sets up a timer and sends reminders when it is time to take the medication. Additionally, if the user is running low on medication, the app sends a notification. These reminders and notifications are also managed through the Vonage API, providing a seamless and reliable reminder system.</p>
+                            <h2>To view the complete code and download it, visit this <a href="https://github.com/Juanxtron/Juanxtron/tree/main/depressiontrackerapp" target="_blank">link</a>.</h2>
+
+                        </div>
+					</div>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<div class="inner">
+							<section>
+								<h2>Follow</h2>
+								<ul class="icons">
+									<li><a href="https://www.linkedin.com/in/juan-pablo-cancelado-caro/" class="icon brands style2 fa-linkedin"><span class="label">Linkedin</span></a></li>
+									<li><a href="https://github.com/Juanxtron/Juanxtron" class="icon brands style2 fa-github"><span class="label">GitHub</span></a></li>
+								</ul>
+								</ul>
+							</section>
+							<ul class="copyright">
+							</ul>
+						</div>
+					</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

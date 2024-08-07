@@ -1,0 +1,110 @@
+<!DOCTYPE HTML>
+<!--
+	Phantom by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Chatbot page</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<div class="inner">
+
+							<!-- Logo -->
+								<a href="index.html" class="logo">
+									<span class="symbol"><img src="images/arrowleft.svg" alt="" /></span><span class="title">Projects</span>
+								</a>
+
+							<!-- Nav -->
+								<nav>
+									<ul>
+										<li><a href="#menu">Menu</a></li>
+									</ul>
+								</nav>
+
+						</div>
+					</header>
+
+				<!-- Menu -->
+					<nav id="menu">
+						<h2>Menu</h2>
+						<ul>
+							<li><a href="index.html">Home</a></li>
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+							<h1>AI-based Chatbot (NLP)</h1>
+                            <span class="image main"><img src="images/FuncionamientoCB.jpg" alt="" /></span>
+                            <p>The goal of this project is to develop an NLP-based chatbot to answer questions about sexual health, using a BERT model trained with custom data and the SQuAD-es dataset. The Dash application allows users to interact with the chatbot easily and efficiently. Although the chatbot has deficiencies in answering some questions, as seen in the second question in the initial image due to the limited data used given my computer's computational capacity, this project was a great learning experience for understanding the basic concepts of NLP models.</p>
+                            <h2>Creating the Environment</h2>
+                            <p>To start developing the chatbot, I installed the necessary libraries. I used pandas for data manipulation, torch for handling tensors and model training, transformers for using and training the BERT model, and dash for creating the web interface.</p>
+                            <span class="image"><img src="images/CargadedatosCB.jpg" alt="" /></span>
+                            <h2>Data Cleaning</h2>
+                            <p>I used three datasets collected from the <a href="https://www.datos.gov.co/browse?q=Salud%20sexual%20-%20Pregunta%20-%20Juegos%20-%20Frase&sortBy=relevance" target="_blank">Open Data of Colombia</a> page, provided by the Ministry of Health and Social Protection. The datasets used were:</p>
+                            <p>1. Sexual Health - Question - Games - Phrase</p>
+                            <p>2. Health and Social Protection</p>
+                            <p>3. Sexual Health - Question - Games</p>
+                            <span class="image"><img src="images/basedatosCB.jpg" alt="" /></span>
+                            <p>I merged these into a global database with only two columns: Questions and Answers. Then I cleaned and adjusted the columns to ensure the data was in the correct format.</p>
+                            <h2>Tokenization Using Artificial Context</h2>
+                            <span class="image"><img src="images/TokenizaciónCB.jpg" alt="" /></span>
+                            <p>BERT is used to tokenize the questions and answers along with an artificial context, preparing them to be processed by the language model.</p>
+                            <p>In this project, I used an artificial context to improve the accuracy of the question-answering model. The database used has a structure where each row contains a question and its corresponding answer, without additional context. In question-answering tasks, language models like BERT greatly benefit from having a broader context to better understand the questions and provide precise answers.</p>
+                            <h2>Configuring Arguments and Training</h2>
+                            <span class="image"><img src="images/Entrenamientodatospropios.jpg" alt="" /></span>
+                            <p>Here I loaded the pre-trained BERT model specific for question-answering tasks. The model was trained using the previously tokenized data.</p>
+                            <h2>Download the SQuAD-es Dataset</h2>
+                            <span class="image"><img src="images/Descargasquad-es.jpg" alt="" /></span>
+                            <p>In addition to using my custom database of questions and answers about sexual health, I also employed the SQuAD-es dataset (SQuAD in Spanish). The use of SQuAD-es allows the model to be trained on a broader and more diverse corpus, enhancing its ability to handle a variety of questions in Spanish.</p>
+                            <p>Then, I tokenized the SQuAD-es data. Tokenization is a crucial step where the questions and contexts are converted into token sequences that the model can process. With the SQuAD-es data tokenized, I proceeded to train the model again using these data. This additional training allows the model to learn from a broader and more diverse dataset, improving its response capability.</p>
+                            <h2>Load the Trained Model and Use It in an Application</h2>
+                            <span class="image"><img src="images/Cargarelpipeline.jpg" alt="" /></span>
+                            <p>In this project, after training the model using the SQuAD-es dataset, I configured a question-answering pipeline using the Hugging Face transformers library. This pipeline facilitates the use of the trained model to answer questions directly.</p>
+                            <h2>User Interface</h2>
+                            <span class="image"><img src="images/DashCB.jpg" alt="" /></span>
+                            <p>The user interface was configured using Dash, allowing users to input questions and receive answers from the trained model.</p>
+                            <h2>To view the complete code and download it, visit this <a href="https://github.com/Juanxtron/Juanxtron/tree/main/ChatBotAiGithub" target="_blank">link</a>.</h2>
+
+                        </div>
+					</div>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<div class="inner">
+							<section>
+								<h2>Follow</h2>
+								<ul class="icons">
+									<li><a href="https://www.linkedin.com/in/juan-pablo-cancelado-caro/" class="icon brands style2 fa-linkedin"><span class="label">Linkedin</span></a></li>
+									<li><a href="https://github.com/Juanxtron/Juanxtron" class="icon brands style2 fa-github"><span class="label">GitHub</span></a></li>
+								</ul>
+								</ul>
+							</section>
+							<ul class="copyright">
+							</ul>
+						</div>
+					</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
