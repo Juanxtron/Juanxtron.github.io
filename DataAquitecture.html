@@ -50,7 +50,7 @@
 
                             <h2>Course recommended</h2>
                             <div id="course-map">
-                                <img src="images/Mapgptprompt.jpg" usemap="#coursemapgpt" alt="Course Map">
+                                <img src="images/MapCloudDataSecurity.jpg" usemap="#coursemapgpt" alt="Course Map">
 
                                 <map name="coursemapgpt">
                                     <!-- Definir las áreas clickeables sobre la imagen -->
@@ -66,9 +66,9 @@
                             <div id="popup-course20" class="popup">
                                 <div class="popup-content">
                                     <span class="close" onclick="closePopup('course20')">&times;</span>
-                                    <h2>ChatGPT Prompt Engineering for Developers</h2>
+                                    <h2>Cloud Data Security course</h2>
                                     <button onclick="showDescription('course20')">Course description</button>
-                                    <button onclick="showCertificate('Prompengeniering')">View certificate</button>
+                                    <button onclick="showCertificate('CloudDataSecurity')">View certificate</button>
                                 </div>
                             </div>
 
@@ -78,120 +78,127 @@
                                 <div class="popup-content">
                                     <span class="close" onclick="closePopup('description-course20')">&times;</span>
                                     <h2>Description course</h2>
-                                    <p>This course, "ChatGPT Prompt Engineering for Developers," teaches how to utilize large language models (LLMs) to build innovative and powerful applications using the OpenAI API. Taught by Isa Fulford (OpenAI) and Andrew Ng (DeepLearning.AI), the course covers how LLMs work, best practices for prompt engineering, and practical applications like summarizing, inferring, transforming, and expanding text. Additionally, the course introduces key principles for writing effective prompts and demonstrates how to build custom chatbots, all through hands-on examples in a Jupyter notebook environment.</p>
+                                    <p>The Cloud Data Security course focuses on the organization and protection of data in cloud environments, covering best practices for securing databases, data classification, and safeguarding information throughout its lifecycle. It delves into common vulnerabilities such as SQL injections and teaches how to assess data breach vulnerabilities. The course also examines cloud storage services offered by different providers, exploring how these services are structured to ensure data security. Additionally, it addresses data privacy regulations, both within the United States and internationally, covering legal frameworks like GDPR, PCI-DSS, and HIPAA, to ensure organizations meet privacy and security expectations in a global context.</p>
                                 </div>
                             </div>
 
 
                             <h2></h2>
-                            <h2>Learning Journey</h2>
-                            <div class="content">
-                                <p>Throughout my learning journey in the "ChatGPT Prompt Engineering for Developers" course, I delved into various core concepts and hands-on projects that sharpened my skills in using large language models (LLMs) for practical applications.</p>
+                            <h2>Learning Journey in Cloud Data Security Course</h2>
+                                <div class="content">
+                                    <p>Throughout my learning journey in the "Cloud Data Security" course, I explored various core concepts and hands-on projects that enhanced my understanding of data protection in cloud environments. I focused on how data organization influences security strategies, working extensively with Entity-Relationship (ER) diagrams and mastering Conceptual Data Modeling (CDM) to structure and secure sensitive information effectively.</p>
 
-                                <h3>Guidelines for Prompting</h3>
-                                <p>I learned two fundamental principles of prompt engineering: writing clear and specific instructions, and giving the model time to "think." These principles were applied through tactics such as using delimiters, requesting structured outputs, and implementing "few-shot" prompting.</p>
+                                    <h3>Data Organization and Protection</h3>
+                                    <p>I delved into the importance of organizing data into databases and structures that optimize processing efforts while ensuring robust protection. This included a deep dive into database management, data classification, and the lifecycle of data within cloud services.</p>
 
-                                <h3>Iterative Prompt Development</h3>
-                                <p>This module focused on refining prompts iteratively to generate precise outputs. I applied this to create marketing descriptions from product fact sheets, adjusting the prompts to handle issues like text length and focus on relevant details.</p>
+                                    <h3>Addressing Security Vulnerabilities</h3>
+                                    <p>In this module, I focused on identifying and mitigating security risks associated with SQL and cloud storage services. I learned to assess data breach vulnerabilities and developed strategies to protect company data across different cloud models.</p>
 
-                                <h3>Summarizing</h3>
-                                <p>I explored how to summarize text with a focus on specific topics, learning to generate concise summaries tailored to different departments, such as shipping or pricing, within an organization.</p>
+                                    <h3>Compliance with Privacy Regulations</h3>
+                                    <p>I studied key privacy regulations, including GDPR, PCI-DSS, and HIPAA, learning how to implement data protection measures that comply with international standards. This module emphasized the importance of understanding and adhering to privacy laws in a globalized market.</p>
 
-                                <h3>Inferring</h3>
-                                <p>In this module, I learned to infer sentiment, emotions, and topics from product reviews and news articles. I also worked on extracting key information like product names and companies mentioned in the reviews.</p>
+                                    <h2>Hands-on Project: Restaurant Manager Platform</h2>
 
-                                <h3>Transforming</h3>
-                                <p>This module covered text transformation tasks, including translation, spelling and grammar checking, tone adjustment, and format conversion. I practiced these techniques by transforming texts into different formats and styles.</p>
+                                    <div class="content">
+                                        <p>The Restaurant Manager platform is designed to streamline the operations of a restaurant by managing orders, inventory, staff, and finances. The platform is underpinned by a robust database structure that ensures efficient data handling and security. It utilizes various triggers to automate updates to critical tables such as inventory, profit, and availability of dishes based on real-time events in the system.</p>
 
-                                <h3>Expanding</h3>
-                                <p>Finally, I applied prompt engineering techniques to generate tailored customer service emails based on the sentiment of customer reviews, creating responses that are professional and contextually relevant.</p>
+                                        <h3>Triggers and Automation</h3>
+                                        <p>The platform employs several triggers to automate tasks and ensure data integrity:</p>
+                                        <ul>
+                                            <li><strong>Inventory Management:</strong> A trigger ensures that when an ingredient is used, the inventory is automatically updated. If an ingredient is insufficient, the associated dish is marked as unavailable.</li>
+                                            <li><strong>Profit Calculation:</strong> A trigger automatically updates the profit and revenue tables whenever an order is marked as paid or when a new cost is recorded.</li>
+                                            <li><strong>Order Management:</strong> Triggers handle the status of orders, moving them to inactive orders if they cannot be fulfilled due to a lack of ingredients.</li>
+                                        </ul>
 
-                                <h3>Hands-on Project</h3>
-                                <p>As part of my hands-on experience, I developed a customized GPT for real estate marketing strategies. This AI-driven assistant helps with SEO optimization, A/B testing, content creation in various styles, and evaluates property prices for sales and rentals in Colombia. The project also includes capabilities for generating visualizations, answering specific property-related queries, and providing guidance on legal aspects of buying, selling, or renting properties in Colombia, making it a comprehensive tool for real estate professionals.</p>
-                            </div>
+                                        <h3>Entity Relationships</h3>
+                                        <p>The platform's database structure includes several entities that are closely interrelated to ensure seamless operations:</p>
+                                        <img src="images/ImagendiagramaRE.png" alt="Entity Relationship Diagram" />
+                                        <h3>Role and User</h3>
+                                        <p><strong>Relationship:</strong> A <em>Role</em> has many <em>Users</em>, but each <em>User</em> belongs to only one <em>Role</em>.</p>
+                                        <p>This one-to-many relationship allows a single role, such as "Owner," "Chef," or "Waiter," to be assigned to multiple users, while each user is associated with only one role, defining their permissions within the system.</p>
 
-                            <h2>Customized GPT funtionalities</h2>
-                            <h2>Project Overview</h2>
-                            <p>This project involved the development of a customized GPT, named <strong>Asistente para Asesores Inmobiliarios en Colombia</strong>, to assist with real estate marketing strategies and evaluate property prices for sale and rent in Colombia. The model uses data-driven insights to respond to inquiries and generate valuable content for real estate professionals.</p>
-                            <p>The GPT was designed with various specialized functionalities, including SEO optimization, content generation for A/B testing, and answering legal questions related to the buying, selling, or renting of properties in Colombia.</p>
+                                        <h3>User and Owner/Chef/Waiter</h3>
+                                        <p><strong>Relationship:</strong> Each entity <em>Owner</em>, <em>Chef</em>, and <em>Waiter</em> has an associated <em>User</em>, but a <em>User</em> may not be linked to any of these entities.</p>
+                                        <p>This one-to-one relationship ensures that every Owner, Chef, and Waiter in the system has a corresponding user account, enabling them to access the functionalities assigned to their roles.</p>
 
-                            <h2>Prompt Engineering Techniques</h2>
-                            <p>Throughout the project, the following prompt engineering techniques were utilized:</p>
-                            <ul>
-                                <li><strong>Summarizing:</strong> Used to condense large amounts of data into digestible insights for property listings and market trends.</li>
-                                <li><strong>Inferring:</strong> Employed to detect sentiment in user inquiries and adjust responses accordingly, as well as to extract relevant information from property descriptions.</li>
-                                <li><strong>Expanding:</strong> Applied to generate comprehensive responses for customer service interactions and detailed property descriptions.</li>
-                                <li><strong>Transforming:</strong> Used for translating technical details into user-friendly content and adapting the tone based on the audience.</li>
-                            </ul>
+                                        <h3>Owner and Cost/Profit/Revenue</h3>
+                                        <p><strong>Relationship:</strong> An <em>Owner</em> can have multiple <em>Cost</em>, <em>Profit</em>, and <em>Revenue</em> records associated with them.</p>
+                                        <p>This relationship allows the system to track costs, revenues, and profits related to each restaurant owner, ensuring accurate financial management.</p>
 
-                            <h2>Customized Instructions and Functionalities</h2>
-                            <p>The GPT model was trained to follow specific instructions tailored to the real estate context:</p>
-                            <ul>
-                                <li><strong>Language and Style:</strong> Responses are provided in clear and precise Spanish, with a formal tone for technical recommendations and a friendly tone for property price inquiries.</li>
-                                <li><strong>Greeting and Farewell:</strong> The conversation starts with "Hola, soy tu asesor inmobiliario de confianza. ¿En qué te puedo ayudar hoy?" and ends with "Espero haber sido de ayuda. Si tienes más preguntas sobre el mercado inmobiliario en Bogotá, no dudes en preguntar. ¡Buena suerte con tu propiedad!"</li>
-                                <li><strong>Content of Responses:</strong> The model offers SEO suggestions, marketing strategies, property price evaluations using data from "inmuebles_bogota" and "Inmuebles_Disponibles_para_Arrendamiento_con_barrios," and legal advice using the files "RequisitoscompraventaCasas" and "Requisitosarriendo."</li>
-                                <li><strong>Data Handling:</strong> The model uses public data from "Datos abiertos Colombia" and applies necessary transformations, such as reformatting addresses and extracting neighborhood information for more accurate property evaluations.</li>
-                                <li><strong>Error Management:</strong> If information is not found, the model politely informs the user that it will continue searching, and if no results are found, it responds with, "Lo siento, pero no hay información disponible para lo que estás pidiendo en este momento."</li>
-                            </ul>
+                                        <h3>Order and Table/ChefGroup</h3>
+                                        <p><strong>Relationship:</strong> An <em>Order</em> is linked to a <em>Table</em> and a <em>ChefGroup</em>.</p>
+                                        <p>Each order in the system is associated with a specific table (where the order is placed) and a chef group (responsible for preparing the order). This many-to-one relationship allows multiple orders to be linked to the same table or chef group.</p>
 
+                                        <h3>Order and OrderIndividual</h3>
+                                        <p><strong>Relationship:</strong> An <em>Order</em> can have many <em>OrderIndividual</em>, but each <em>OrderIndividual</em> belongs to a single <em>Order</em>.</p>
+                                        <p>This one-to-many relationship ensures that a complete order can consist of multiple individual orders, each representing a different dish or item ordered.</p>
 
-                            <h3>Sample Conversations</h3>
-                            <p>Here are some sample prompts that the customized GPT can handle:</p>
-                            <ul>
-                                <li>"Quiero vender una propiedad, ¿puedes ayudarme a crear un anuncio efectivo?"</li>
-                                <li>"Estoy buscando estrategias para optimizar mi página inmobiliaria en Google, ¿qué me recomiendas?"</li>
-                                <li>"Ayúdame a encontrar las propiedades más económicas para arrendar en Usaquén."</li>
-                            </ul>
+                                        <h3>OrderIndividual and Dish</h3>
+                                        <p><strong>Relationship:</strong> An <em>OrderIndividual</em> is linked to a single <em>Dish</em>, but a <em>Dish</em> can appear in multiple <em>OrderIndividual</em>.</p>
+                                        <p>This many-to-one relationship allows the same dish to be part of multiple individual orders, while each individual order is associated with a specific dish.</p>
 
-                            <span class="image"><img src="images/Imagengptpersonalziadocaracteristicas.jpg" alt="" /></span>
+                                        <h3>Dish and DishIngredient</h3>
+                                        <p><strong>Relationship:</strong> A <em>Dish</em> can have multiple <em>DishIngredient</em>, but each <em>DishIngredient</em> belongs to a single <em>Dish</em>.</p>
+                                        <p>This one-to-many relationship allows a dish to be composed of various ingredients, with each ingredient linked to the dish through the DishIngredient entity.</p>
 
-                            <h2>Data Sources and Processing</h2>
-                            <p>Data used to train and refine the model was gathered from various public sources and processed to ensure accuracy:</p>
-                            <ul>
-                                <li><strong>Requisitos Compra/Venta and Requisitos Arriendo:</strong> These JSON files were created using publicly available information on property regulations in Bogotá, compiled and structured with the help of ChatGPT-4.</li>
-                                <li><strong>Inmuebles Bogotá and Inmuebles Disponibles para Arrendar:</strong> Sourced from "Datos Abiertos Colombia," these datasets include details on property types, descriptions, and pricing, with necessary format adjustments made using Tableau Prep and custom Python scripts for accurate analysis.</li>
-                            </ul>
+                                        <h3>DishIngredient and Ingredient</h3>
+                                        <p><strong>Relationship:</strong> Each <em>DishIngredient</em> has a single <em>Ingredient</em> associated with it, but an <em>Ingredient</em> can be used in multiple <em>DishIngredient</em>.</p>
+                                        <p>This many-to-one relationship ensures that each ingredient can be used in different dishes, while each DishIngredient record corresponds to a specific ingredient.</p>
 
-                            <h3>Example of Data Processing</h3>
+                                        <h3>Inventory and Ingredient</h3>
+                                        <p><strong>Relationship:</strong> An <em>Ingredient</em> can have multiple entries in <em>Inventory</em>, but each <em>Inventory</em> record is linked to a single <em>Ingredient</em>.</p>
+                                        <p>This one-to-many relationship allows the system to manage the stock of each ingredient individually, ensuring accurate inventory tracking.</p>
 
-                            <p>For the <strong>Inmuebles Bogotá</strong> dataset containing house prices in Bogotá for 2024. Several Tableau techniques were employed, including <strong>Data Transformation</strong> to adjust the data structure as needed. Specific tasks included <strong>Removing Duplicates</strong> to eliminate redundant entries and <strong>Handling Null Values</strong> to address any missing data. Additionally, operations like <strong>Splitting and Merging Fields</strong> were performed to reformat and optimize the data for subsequent analysis.</p>
-                            <p>As shown in the video, a <strong>Calculated Field</strong> was created using a formula to correct the price format issues. Originally, prices that should have been in millions were misrepresented; for example, 23 was displayed instead of 230 million pesos, and values in billions of pesos (e.g., 2,300,000,000) appeared incorrectly as 2.3. The calculated field adjusted these values to reflect the correct monetary amounts, ensuring that the data was accurately represented for analysis.</p>
-                            <span class="video"><video src="videos/Grabaciónlimpiezadatos.mp4" controls controlslist="nodownload"></video></span>
+                                        <h3>Payment and User</h3>
+                                        <p><strong>Relationship:</strong> A <em>Payment</em> is associated with a <em>User</em> who processes the payment, but a <em>User</em> can process multiple payments.</p>
+                                        <p>This many-to-one relationship reflects that a user, such as a waiter or chef, may be involved in processing several payments within the system.</p>
 
-                            <h3></h3>
-                            <h3></h3>
-                            <p>For the "Inmuebles_Disponibles_para_Arrendar" dataset, a Python code was used to correct address formatting and extract neighborhood information:</p>
-                            <ul>
-                                <li><strong>Address Format Correction:</strong> The dataset <em>Inmuebles_Disponibles_para_Arrendamiento_con_barrios</em> initially contained addresses in a non-standard format, which made it difficult to extract neighborhood information. To resolve this, a Python script was developed to:
-                                    <ul>
-                                        <li><strong>Standardize Address Terms:</strong> Replace abbreviations like "CL" and "KR" with their full forms "Calle" and "Carrera."</li>
-                                        <li><strong>Combine Street Numbers:</strong> Merge separated street numbers into a standardized format, ensuring consistency.</li>
-                                        <li><strong>Add Location Context:</strong> Append ", Bogotá, Colombia" to each address to provide clear context for geocoding.</li>
-                                    </ul>
-                                </li>
-                                <li><strong>Neighborhood Extraction:</strong> Once the addresses were standardized, the next step was to extract the neighborhood (or "barrio") information. This was done by:
-                                    <ul>
-                                        <li><strong>Geocoding:</strong> Using the Nominatim service from the <code>geopy</code> library, each corrected address was geocoded to obtain latitude and longitude.</li>
-                                        <li><strong>Reverse Geocoding:</strong> With these coordinates, a reverse geocoding process was used to retrieve detailed location information, specifically focusing on identifying the neighborhood name.</li>
-                                        <li><strong>Handling Errors:</strong> If the neighborhood couldn't be identified, a default response "Barrio no encontrado" was used, and any errors during processing were caught and logged for review.</li>
-                                    </ul>
-                                </li>
-                                <li><strong>Data Output:</strong> After processing the data, the cleaned and enriched dataset, now including a corrected address and neighborhood information, was saved to a new CSV file. This file was then used by the GPT model to provide accurate property evaluations based on the location.</li>
-                            </ul>
-                            
-                            <h2>SEO Optimization and A/B Testing</h2>
-                            <p>To further enhance the capabilities of the model, it was trained to assist with SEO optimization and A/B testing strategies. This involved the following steps:</p>
-                            <ul>
-                                <li><strong>Data Collection:</strong> The model was trained using public information on SEO best practices and A/B testing methodologies.</li>
-                                <li><strong>API Integration:</strong> The model was connected to the Google Keyword Planner API to access real-time data and generate optimized keywords for content targeting.</li>
-                                <li><strong>Content Recommendations:</strong> Based on the data from the keyword planner, the model provides recommendations for optimizing website content and generating A/B test variants to improve user engagement and conversion rates.</li>
-                            </ul>
-                            
-                            <h2>Demostration</h2>
-                            <span class="video"><video src="videos/VideofuncionamientoGPT.mp4" controls controlslist="nodownload"></video></span>
-                            <h2></h2>
+                                        <h3>Table and Waiter</h3>
+                                        <p><strong>Relationship:</strong> A <em>Table</em> is attended by a <em>Waiter</em>, but a <em>Waiter</em> can be assigned to multiple <em>Tables</em>.</p>
+                                        <p>This many-to-one relationship ensures that each table has a dedicated waiter, while a waiter can manage several tables simultaneously.</p>
 
-                            <h2>Want to see the instructions given to the GPT, the JSON file to connect to the Google Ads API, and the code for cleaning the "Inmuebles_Disponibles_para_Arrendar" dataset? <a href="https://github.com/Juanxtron/CustomGPT/tree/main/CustomGPT">Click here</a>.</h2>
+                                        <h3>InactiveOrders and OrderIndividual</h3>
+                                        <p><strong>Relationship:</strong> The <em>InactiveOrders</em> entity tracks orders that cannot be fulfilled and is linked to <em>OrderIndividual</em>.</p>
+                                        <p>This relationship helps manage and track orders that are incomplete due to various issues such as ingredient shortages.</p>
+
+                                        <h3>UnavailableDish and Dish</h3>
+                                        <p><strong>Relationship:</strong> The <em>UnavailableDish</em> entity is linked to <em>Dish</em>, tracking dishes that are unavailable due to lack of ingredients.</p>
+                                        <p>This relationship allows the system to mark dishes as unavailable when their ingredients are not in stock.</p>
+
+                                        <h3>ChefGroup and Chef</h3>
+                                        <p><strong>Relationship:</strong> A <em>ChefGroup</em> can have multiple <em>Chef</em> entities, but each <em>Chef</em> belongs to a single <em>ChefGroup</em>.</p>
+                                        <p>This one-to-many relationship allows chefs to be grouped under a specific team or group within the restaurant.</p>
+
+                                        <h2>Using XAMPP for Development</h2>
+                                        <p>To run and view the platform locally, XAMPP was used as the development environment. XAMPP provides an easy-to-install Apache distribution containing MariaDB, PHP, and Perl. Below is an image showing the XAMPP Control Panel:</p>
+                                        <img src="images/imagenXamp.jpg" alt="XAMPP Control Panel" />
+
+                                        <h2>Password Security</h2>
+                                        <p>To ensure the security of user data, especially passwords, the platform uses hashed passwords stored in the database. This approach ensures that even if the database is compromised, the actual passwords remain secure. The system employs secure hashing algorithms to generate a hash from the user's password, which is then stored instead of the plaintext password.</p>
+                                        <img src="images/ImagenContraseñashash.jpg" alt="Password Hash Example" />
+                                        <h2>Conceptual Data Modeling (CDM)</h2>
+                                        <p>The platform is based on a Conceptual Data Model (CDM) that describes the criteria and capabilities of data domains within the restaurant management context. The CDM defines the structure of data and its relationships, ensuring that all data elements are consistently and accurately represented across the system.</p>
+
+                                        <h2>Information Reference Model (IRM)</h2>
+                                        <p>The Information Reference Model (IRM) illustrates the relationships between defined information entities based on their data domain classification. It ensures that the data model aligns with the business objectives and supports the operational needs of the restaurant.</p>
+
+                                        <h2>Enterprise Information Model (EIM)</h2>
+                                        <p>The Enterprise Information Model (EIM) encompasses both the Conceptual Data Model (CDM) and the Information Reference Model (IRM). It provides a comprehensive framework that supports data consistency, integrity, and accessibility across the entire platform, aligning the data architecture with the business strategy.</p>
+
+                                        <h3>Demo Video</h3>
+                                        <p>To see how the platform works in practice, watch the following demo video:</p>
+                                        <iframe width="560" height="315" src="https://www.youtube.com/embed/fCqCommoeKc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                                        <h3></h3>
+                                        <h3>Permissions and Security</h3>
+                                        <p>The platform includes a comprehensive permissions system that assigns roles to users and grants them specific privileges based on their role. For example, chefs have permissions to view and update dishes, while waiters have permissions related to orders and tips. These permissions are managed through the MySQL database and enforced through stored procedures and triggers, ensuring that users can only access data relevant to their role.</p>
+
+                                        <p>The platform uses triggers to automate the assignment of privileges to users when they are created. Additionally, the platform's triggers ensure that profit calculations are updated automatically whenever an order is paid or when a new cost is recorded, maintaining accurate financial records.</p>
+                                        <p>This hands-on project allowed me to apply the principles learned in the Cloud Data Security course, ensuring that data protection and efficient management practices are embedded in real-world applications.</p>
+                                    </div>
+                                    
+                                </div>
+
+                                <h2>Want to see more information about the SQL codes used, the hash algorithm, and the code for the Restaurant Manager webpage? <a href="https://github.com/Juanxtron/RestaurantManager">Click here</a>.</h2>
                         </div>
                     </div>
 
