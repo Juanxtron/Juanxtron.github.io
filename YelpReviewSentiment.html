@@ -1,0 +1,243 @@
+<!DOCTYPE HTML>
+<!--
+    Phantom by HTML5 UP
+    html5up.net | @ajlkn
+    Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+    <head>
+        <title>Yelp Review Sentiment Analysis</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+        <link rel="stylesheet" href="assets/css/main.css" />
+        <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+    </head>
+    <body class="is-preload">
+
+        <!-- Wrapper -->
+        <div id="wrapper">
+
+            <!-- Header -->
+            <header id="header">
+                <div class="inner">
+                    <!-- Logo -->
+                    <a href="index.html" class="logo">
+                        <span class="symbol"><img src="images/arrowleft.svg" alt="" /></span>
+                        <span class="title">Projects</span>
+                    </a>
+
+                    <!-- Nav -->
+                    <nav>
+                        <ul>
+                            <li><a href="#menu">Menu</a></li>
+                        </ul>
+                    </nav>
+
+                </div>
+            </header>
+
+            <!-- Menu -->
+            <nav id="menu">
+                <h2>Menu</h2>
+                <ul>
+                    <!-- Intentionally omitting 'Home' link for consistency with prior instructions -->
+                </ul>
+            </nav>
+
+            <!-- Main -->
+            <div id="main">
+                <div class="inner">
+                    <h1>Yelp Review Sentiment Analysis</h1>
+                    <p>
+                        This project focuses on sentiment analysis of Yelp reviews 
+                        (<a href="https://www.kaggle.com/datasets/ilhamfp31/yelp-review-dataset" target="_blank">
+                            dataset link
+                        </a>).
+                        We classify reviews as positive or negative using an LSTM-based model. Below is a detailed overview 
+                        of the problem, the exploratory data analysis (EDA), preprocessing steps, model setup, and final results.
+                    </p>
+
+                    <!-- Problem Explanation -->
+                    <section>
+                        <h2>Problem Description</h2>
+                        <p>
+                            The dataset is large (560,000 training reviews and 38,000 test reviews). To avoid long training times, 
+                            we sampled a subset of <strong>70,000 reviews</strong> from <em>train.csv</em> and then split those 
+                            into train, validation, and test sets. The objective: build a deep learning model that predicts 
+                            sentiment (<em>positive</em> or <em>negative</em>) from the review text. Key steps were:
+                        </p>
+                        <ol>
+                            <li><strong>Data Exploration:</strong> Understand distribution of reviews, text length, frequent words, etc.</li>
+                            <li><strong>Data Preprocessing:</strong> Remove HTML tags, URLs, numeric characters, special symbols, 
+                                and so on; tokenize and lemmatize each review.
+                            </li>
+                            <li><strong>Subset & Partition:</strong> Randomly pick 70,000 reviews, then split them (train/val/test).
+                            </li>
+                            <li><strong>Model Building:</strong> LSTM neural network with an Embedding layer, tuned hyperparameters (embedding size, LSTM units, vocab size).
+                            </li>
+                            <li><strong>Evaluation:</strong> Check accuracy, confusion matrix, ROC curve, and AUC on a separate test set.
+                            </li>
+                        </ol>
+                    </section>
+
+                    <!-- Exploratory Data Analysis Section -->
+                    <section>
+                        <h2>Exploratory Data Analysis (EDA)</h2>
+                        <p>
+                            Before building the model, we performed thorough EDA on the sample of 70,000 reviews:
+                        </p>
+                        <ul>
+                            <li><strong>Class Distribution:</strong> We verified a balanced or near-balanced distribution of positive vs. negative reviews in the subset.</li>
+                            <li><strong>Review Length:</strong> 
+                                <em>Mean length</em> ~67 words, with 25% of reviews below 27 words and 75% below 88 words. 
+                                Very long reviews (300+ words) were relatively rare.
+                            </li>
+                            <img src="images/Diagrama1.jpg" alt="" />
+                            <li><strong>Common Words:</strong> Frequent tokens included “good,” “place,” “food,” and “time” in both positive and negative reviews, though the context and intensifiers differ by sentiment.
+                            </li>
+                            <img src="images/diagrama2.jpg" alt="" />
+                            <li><strong>Bigram Analysis:</strong> Bigrams like “customer service,” “go back,” and “first time” highlighted typical phrases in Yelp reviews.
+                            </li>
+                            <img src="images/Diagrama3.jpg" alt="" />
+                            <li><strong>Comparative Stats by Sentiment:</strong> Negative reviews often had more past-tense verbs and slightly more exclamation marks on average; positive reviews tended to be shorter (mean ~59 words vs. ~75 for negative) but used certain favorable adjectives more frequently.
+                            </li>
+                        </ul>
+                        <p>
+                            One critical EDA step was verifying that the top <em>5,000 words</em> accounted for ~90% of the total word usage in our training set. 
+                            We used Python’s <code>Counter</code> to compute the <strong>cumulative coverage</strong> of the most frequent words. Here’s a snippet 
+                            that plots the coverage of the vocabulary (up to 10,000 words), drawing lines at 
+                            coverage=90% and vocab_size=5000:
+                        </p>
+                        <img src="images/Diagrama4.jpg" alt="" />
+                        <p>
+                            As the figure shows, using the top <strong>5,000 words</strong> yields about 90% coverage of all tokens in the train subset. This greatly reduces the embedding dimension requirements while retaining the majority of relevant vocabulary.
+                        </p>
+                        <p>
+                            Additionally, histogram analysis of <em>review length</em> revealed that ~300 tokens covers the 
+                            vast majority of reviews. Therefore, truncating or padding sequences to a maximum length of 
+                            <strong>300</strong> tokens prevents extremely long outliers from skewing training while 
+                            capturing the essential text of typical Yelp reviews.
+                        </p>
+                    </section>
+
+                    <section>
+                        <h2>Preprocessing</h2>
+                        <p>
+                            Each review was lowercased, stripped of HTML tags, URLs, and special characters, then tokenized 
+                            and lemmatized (removing <em>stopwords</em>). The final cleaned text was stored in <code>cleaned_review</code>. 
+                            Example advanced preprocessing function:
+                        </p>
+<pre><code>def preprocess_text_advanced(text):
+    # Convert to lowercase
+    text = text.lower()
+    # Remove HTML tags
+    text = BeautifulSoup(text, 'html.parser').get_text()
+    # Remove URLs
+    text = re.sub(r'http\S+|www\S+', '', text)
+    # Remove @mentions
+    text = re.sub(r'@[A-Za-z0-9]+','', text)
+    # Remove digits
+    text = re.sub(r'\d+', '', text)
+    # Remove special characters, underscores
+    text = re.sub(r"\W+|_", ' ', text)
+    # Remove extra spaces
+    text = " ".join(text.split())
+    # Tokenize
+    words = word_tokenize(text)
+    # Lemmatize and remove stopwords
+    words = [lm.lemmatize(w) for w in words if w not in stop_words]
+    return " ".join(words)
+</code></pre>
+                    </section>
+
+                    <!-- Model Section -->
+                    <section>
+                        <h2>LSTM Model and Tokenization</h2>
+                        <p>
+                            After EDA and data cleaning, we randomly selected 70,000 reviews for training and validation. 
+                            Using <code>Tokenizer(num_words=5000)</code> ensures only the most frequent 5,000 words 
+                            are kept in our vocabulary. Then, we converted text sequences to integer indices and applied 
+                            <code>pad_sequences</code> with <strong>maxlen=300</strong> to unify input length.
+                        </p>
+                        <p> For the model, we used a network with an Embedding layer (dim=300), followed by a <em>Bidirectional LSTM</em> layer, and several <em>Dense</em> layers with <em>Dropout</em>. The model was trained for 5 epochs with a batch size of 128, using <strong>categorical_crossentropy</strong> as the loss function and <strong>adam</strong> as the optimizer. Reviews were tokenized using a Keras <code>Tokenizer</code> with vocab_size=5000, and <em>pad_sequences</em> were applied to a maximum length of 300. </p>
+<pre><code>model = Sequential()
+model.add(Embedding(input_dim=5000, output_dim=300, input_length=300))
+model.add(Bidirectional(LSTM(units=128, dropout=0.2)))
+model.add(Dense(128, activation='relu'))
+model.add(Dropout(0.5))
+model.add(Dense(64, activation='relu'))
+model.add(Dense(2, activation='softmax'))
+
+model.compile(loss='categorical_crossentropy', optimizer='adam', metrics=['accuracy'])
+model.summary()
+</code></pre>
+                        <p>
+                            The embedding dimension (300) is large enough to capture semantic nuances of the top 5,000 words, 
+                            and limiting our sequence length to 300 tokens prevents overfitting on extremely lengthy reviews.
+                        </p>
+                    </section>
+
+                    <!-- Training and Results -->
+                    <section>
+                        <h2>Training and Evaluation</h2>
+                        <p>
+                            The model was trained for 5 epochs with batch_size=128. The precition in validation change between 89-91% during the 5 epochs (See the graph below)
+                        </p>
+                        
+                        <img src="images/diagrama5.jpg" alt="" />
+                        <img src="images/diagrama6.jpg" alt="" />
+                        <p>
+                            After training, we evaluated on a 
+                            separate test set of 50,000 unseen reviews. Below are the key outcomes:
+                        </p>
+<pre><code>Matriz de Confusión:
+[[22218  2805]
+ [ 2020 22957]]
+
+Classification Report:
+              precision    recall  f1-score   support
+    negative       0.92      0.89      0.90     25023
+    positive       0.89      0.92      0.90     24977
+    accuracy                           0.90     50000
+   macro avg       0.90      0.90      0.90     50000
+weighted avg       0.90      0.90      0.90     50000
+
+AUC: 0.9644
+</code></pre>
+                        <p>
+                            The model reaches ~90% accuracy and an AUC of 0.9644, indicating strong separation between 
+                            positive and negative sentiment. This performance is achieved with a reduced vocabulary 
+                            (5,000 words) and fixed sequence length (300 tokens), which strike a balance between coverage 
+                            and computational efficiency.
+                        </p>
+                    </section>
+
+                </div>
+            </div>
+
+            <!-- Footer -->
+            <footer id="footer">
+                <div class="inner">
+                    <section>
+                        <h2>Follow</h2>
+                        <ul class="icons">
+                            <li><a href="https://www.linkedin.com/in/juan-pablo-cancelado-caro/" class="icon brands style2 fa-linkedin"><span class="label">Linkedin</span></a></li>
+                            <li><a href="https://github.com/Juanxtron/Juanxtron" class="icon brands style2 fa-github"><span class="label">GitHub</span></a></li>
+                        </ul>
+                    </section>
+                    <ul class="copyright">
+                    </ul>
+                </div>
+            </footer>
+
+        </div><!-- /#wrapper -->
+
+        <!-- Scripts -->
+        <script src="assets/js/jquery.min.js"></script>
+        <script src="assets/js/browser.min.js"></script>
+        <script src="assets/js/breakpoints.min.js"></script>
+        <script src="assets/js/util.js"></script>
+        <script src="assets/js/main.js"></script>
+
+    </body>
+</html>
