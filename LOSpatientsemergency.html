@@ -1,260 +1,336 @@
 <!DOCTYPE HTML>
+<!--
+    Phantom by HTML5 UP
+    html5up.net | @ajlkn
+    Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
 <html>
 <head>
     <title>Hospital Stay Prediction - LOSpatientsEmergency</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <!-- Utiliza los estilos de Phantom: -->
     <link rel="stylesheet" href="assets/css/main.css" />
+    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 </head>
 <body class="is-preload">
 
-<!-- Header -->
-<header id="header">
-    <div class="inner">
-        <a href="index.html" class="logo"><strong>Hospital Stay Prediction (Thesis)</strong></a>
-        <nav>
+    <!-- Wrapper (estructura Phantom) -->
+    <div id="wrapper">
+
+        <!-- Header principal (Phantom) -->
+        <header id="header">
+            <div class="inner">
+                <!-- Logo / Título de la sección superior -->
+                <a href="index.html" class="logo">
+                    <span class="symbol"><img src="images/arrowleft.svg" alt="" /></span>
+                    <span class="title">Projects</span>
+                </a>
+                <!-- Nav (menú desplegable) -->
+                <nav>
+                    <ul>
+                        <li><a href="#menu">Menu</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <!-- Menú lateral (Phantom) -->
+        <nav id="menu">
+            <h2>Menu</h2>
             <ul>
                 <li><a href="index.html">Home</a></li>
             </ul>
         </nav>
-    </div>
-</header>
 
-<!-- Main Content -->
-<div id="main">
-    <div class="inner">
+        <!-- Main (Phantom) -->
+        <div id="main">
+            <div class="inner">
 
-        <header>
-            <h1>Predicting Patient Length of Stay in Emergency Observation Units</h1>
-            <p><strong>LOSpatientsemergency.html</strong></p>
-        </header>
+                <!-- =====================  AQUI INICIA TODO EL PRIMER SNIPPET  ===================== -->
 
-        <!-- Short Conclusion -->
-        <section>
-            <h2>Conclusions and Final Considerations</h2>
-            <p>
-                The development of a machine learning-based system to estimate <em>Tiempo en Observación</em> in emergency units has proven invaluable for resource management across 55 IPS in Medellín. Through comparing four ML models (CatBoost, XGBoost, LightGBM, and a Neural Network with embeddings), <strong>CatBoost</strong> consistently offered the highest accuracy, with an average MAE of ~8.875 hours on validation data. This system was integrated into a web tool, enabling administrative staff to input patient data and quickly receive predictions accompanied by interpretative statistics (via SHAP).
-            </p>
-            <p>
-                Reducing certain features (<em>Sexo, ZonaResidencia, NombreMunicipio</em>, etc.) only marginally affected the MAE (+0.088 hours), thus improving efficiency and user experience. Future expansions include integrating this predictive system within a comprehensive Hospital Management System (HMS), allowing for real-time data flow and routine re-training to address model drift as hospital conditions evolve. Representativeness remains a limitation, as data was sourced from 55 IPS in Medellín. Nevertheless, the approach presents a robust prototype that can be extended to additional institutions and variables.
-            </p>
-        </section>
-        <!-- Section 4: Database -->
-        <section>
-            <h2>Database</h2>
-            <p>
-                The dataset (1,291,374 records) specifically captures patients who stayed in continuous-observation emergency wards. Variables included demographic data (edad, sexo), administrative details, and clinical diagnoses. For full details, refer to 
-                <a href="https://medata.gov.co/dataset/1-026-22-000128" target="_blank">Registro Prestación Servicios Médicos en Urgencia</a>.
-            </p>
-        </section>
-        <!-- Methodology -->
-        <section>
-            <h2>Methodology</h2>
+                <!DOCTYPE HTML>
+                <html>
+                <head>
+                    <title>Hospital Stay Prediction - LOSpatientsEmergency</title>
+                    <meta charset="utf-8" />
+                    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+                    <link rel="stylesheet" href="assets/css/main.css" />
+                </head>
+                <body class="is-preload">
 
-            <h3>Machine Learning Development Stages</h3>
-            <p>
-                Following <em>Nascimento et al. (2019)</em>, the project applied a four-stage framework for ML development:
-            </p>
-            <ol>
-                <li><strong>Problem Understanding:</strong> Clearly define the LOS prediction target, ensuring alignment with institutional goals.</li>
-                <li><strong>Data Handling:</strong> Acquire, structure, and preprocess the 1,291,374 records from 55 IPS to ensure data quality.</li>
-                <li><strong>Model Construction:</strong> Train and evaluate multiple models (CatBoost, XGBoost, LightGBM, neural nets) via MAE metrics and cross-validation.</li>
-                <li><strong>Model Monitoring:</strong> Once deployed, monitor performance and re-train as hospital or patient dynamics shift.</li>
-            </ol>
+                <!-- Header (snippet 1) -->
+                <header id="header">
+                    <div class="inner">
+                        <a href="index.html" class="logo"><strong>Hospital Stay Prediction (Thesis)</strong></a>
+                        <nav>
+                            <ul>
+                                <li><a href="index.html">Home</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </header>
 
-            <h3>Exploratory Data Analysis</h3>
-            <p>
-                The EDA (based on <em>Ghosh et al., 2018</em>) included univariate, bivariate, and multivariate analyses. A major focus was identifying outliers (e.g., unrealistic ages) and merging coded variables with descriptive mappings. The dataset was highly skewed, with LOS ranging from 1 minute to ~664 days.
-            </p>
-            <p>
-                <strong>Figure 1</strong> below (placeholder) illustrates the distribution of <em>TiempoenObservación</em>. Over 50% of patients remain fewer than 5 hours, yet ~19.36% exceed 24 hours. 
-            </p>
-            <figure>
-                <img src="images/figure1_LOSdistribution.jpg" alt="Figura 1: Distribution of LOS" />
-                <figcaption>Figura 1: Distribution histogram of LOS (placeholder).</figcaption>
-            </figure>
+                <!-- Main Content (snippet 1) -->
+                <div id="main">
+                    <div class="inner">
 
-            <p>
-                <strong>Age-based Analysis:</strong> As seen in <strong>Figura 2</strong> (placeholder), older adults (85+ years) exhibit a notably longer mean stay. Chronic respiratory diseases, cardiac conditions, and urinary tract infections are most frequent in this age group. 
-            </p>
-            <figure>
-                <img src="images/figure2_ageAnalysis.jpg" alt="Figura 2: Time in Observación by Age Range" />
-                <figcaption>Figura 2: LOS by age group.</figcaption>
-            </figure>
+                        <header>
+                            <h1>Predicting Patient Length of Stay in Emergency Observation Units</h1>
+                            <p><strong>LOSpatientsemergency.html</strong></p>
+                        </header>
 
-            <p>
-                <strong>External Causes &amp; Gender:</strong> Accident-related issues (more prevalent in younger males), while suspicion of abuse or sexual violence predominantly affected younger females. 
-            </p>
-            <p>
-                <strong>IPS Dynamics:</strong> Certain IPS specialized in mental health (e.g., METROSALUD - Unidad de Salud Mental) had average stays beyond 400 hours. Private clinics (e.g., Clínica Las Américas) displayed high occupancy (~177 patients) and lengthy LOS (~236 hours). 
-            </p>
-            <p>
-                <strong>Distribution of Occupancy by Day, Month, and Hour:</strong> As shown in <strong>Figura 7</strong> (placeholder), differences by weekday are minimal, though weekends slightly decrease. March and April present higher average occupancy, possibly tied to increased respiratory conditions. A notable peak at 2:00 p.m. (~700 patients) arises from administrative batch entries (e.g., Virrey Solís IPS). 
-            </p>
-            <figure>
-                <img src="images/figure7_occupancyTemporal.jpg" alt="Figura 7: Occupación promedio por día, mes y hora" />
-                <figcaption>Figura 7: Average occupancy distribution by weekday, month, and hour (placeholder).</figcaption>
-            </figure>
-        </section>
+                        <!-- Short Conclusion -->
+                        <section>
+                            <h2>Conclusions and Final Considerations</h2>
+                            <p>
+                                The development of a machine learning-based system to estimate <em>Tiempo en Observación</em> in emergency units has proven invaluable for resource management across 55 IPS in Medellín. Through comparing four ML models (CatBoost, XGBoost, LightGBM, and a Neural Network with embeddings), <strong>CatBoost</strong> consistently offered the highest accuracy, with an average MAE of ~8.875 hours on validation data. This system was integrated into a web tool, enabling administrative staff to input patient data and quickly receive predictions accompanied by interpretative statistics (via SHAP).
+                            </p>
+                            <p>
+                                Reducing certain features (<em>Sexo, ZonaResidencia, NombreMunicipio</em>, etc.) only marginally affected the MAE (+0.088 hours), thus improving efficiency and user experience. Future expansions include integrating this predictive system within a comprehensive Hospital Management System (HMS), allowing for real-time data flow and routine re-training to address model drift as hospital conditions evolve. Representativeness remains a limitation, as data was sourced from 55 IPS in Medellín. Nevertheless, the approach presents a robust prototype that can be extended to additional institutions and variables.
+                            </p>
+                        </section>
 
+                        <!-- Section 4: Database -->
+                        <section>
+                            <h2>Database</h2>
+                            <p>
+                                The dataset (1,291,374 records) specifically captures patients who stayed in continuous-observation emergency wards. Variables included demographic data (edad, sexo), administrative details, and clinical diagnoses. For full details, refer to 
+                                <a href="https://medata.gov.co/dataset/1-026-22-000128" target="_blank">Registro Prestación Servicios Médicos en Urgencia</a>.
+                            </p>
+                        </section>
 
+                        <!-- Methodology -->
+                        <section>
+                            <h2>Methodology</h2>
 
-        <!-- 4.5 Feature Engineering -->
-        <section>
-            <h2>Feature Engineering</h2>
-            <p>
-                We unified age measurements (months/days) to years, removing rows beyond 110 years. Categorical columns were recast to strings, discarding invalid municipality data and “I” in <em>Sexo</em>. A lower limit of 30 minutes was enforced for LOS, removing ~4.86% of unrealistic short stays.
-            </p>
-            <p>
-                A crucial addition was <strong>HospitalOccupancy</strong>, aggregating daily bed usage by hospital. Non-essential columns (e.g., raw “Codigo” columns, timestamps) were dropped after computing LOS. 
-            </p>
-            <figure>
-                <img src="images/figure5_featureEng.jpg" alt="Figura 5: Feature Engineering Process" />
-                <figcaption>Figura 5: Diagram representing feature engineering steps.</figcaption>
-            </figure>
-        </section>
+                            <h3>Machine Learning Development Stages</h3>
+                            <p>
+                                Following <em>Nascimento et al. (2019)</em>, the project applied a four-stage framework for ML development:
+                            </p>
+                            <ol>
+                                <li><strong>Problem Understanding:</strong> Clearly define the LOS prediction target, ensuring alignment with institutional goals.</li>
+                                <li><strong>Data Handling:</strong> Acquire, structure, and preprocess the 1,291,374 records from 55 IPS to ensure data quality.</li>
+                                <li><strong>Model Construction:</strong> Train and evaluate multiple models (CatBoost, XGBoost, LightGBM, neural nets) via MAE metrics and cross-validation.</li>
+                                <li><strong>Model Monitoring:</strong> Once deployed, monitor performance and re-train as hospital or patient dynamics shift.</li>
+                            </ol>
 
-        <!-- 4.6 Extended Exploratory Analysis (incluye Occupancy Impact y figura 7) -->
-        <section>
-            <h2>Extended Exploratory Analysis</h2>
-            <p>
-                <strong>Occupancy Impact:</strong> Once <em>HospitalOccupancy</em> was created, we analyzed how daily bed usage affects LOS. Polynomials fitted to SHAP values revealed acceleration ~679 beds (private) vs. ~587 beds (public), then saturation at ~1,064 (private) and ~653 (public). Public IPS showed average stays of 37.28 hours vs. 19.98 hours in private, though private centers reached occupancy peaks of 1,832 patients. 
-            </p>
-            <figure>
-                <img src="images/figure4_occupancy.jpg" alt="Figura 4: Occupancy Acceleration and Saturation Points" />
-                <figcaption>Figura 4: Generic illustration of occupancy vs. LOS impact (public vs. private).</figcaption>
-            </figure>
+                            <h3>Exploratory Data Analysis</h3>
+                            <p>
+                                The EDA (based on <em>Ghosh et al., 2018</em>) included univariate, bivariate, and multivariate analyses. A major focus was identifying outliers (e.g., unrealistic ages) and merging coded variables with descriptive mappings. The dataset was highly skewed, with LOS ranging from 1 minute to ~664 days.
+                            </p>
+                            <p>
+                                <strong>Figure 1</strong> below (placeholder) illustrates the distribution of <em>TiempoenObservación</em>. Over 50% of patients remain fewer than 5 hours, yet ~19.36% exceed 24 hours. 
+                            </p>
+                            <figure>
+                                <img src="images/figura uno.jpg" alt="Figura 1: Distribution of LOS" />
+                                <figcaption>Figura 1: Distribution histogram of LOS (placeholder).</figcaption>
+                            </figure>
 
-            <p>
-                <strong>IPS Public vs Private:</strong> Occupancy analysis underscores the heavier burden in some public IPS, but private IPS can spike higher in peak times. This interplay highlights resource allocation challenges across the system.
-            </p>
-        </section>
+                            <p>
+                                <strong>Age-based Analysis:</strong> As seen in <strong>Figura 2</strong> (placeholder), older adults (85+ years) exhibit a notably longer mean stay. Chronic respiratory diseases, cardiac conditions, and urinary tract infections are most frequent in this age group. 
+                            </p>
+                            <figure>
+                                <img src="images/figurados.jpg" alt="Figura 2: Time in Observación by Age Range" />
+                                <figcaption>Figura 2: LOS by age group.</figcaption>
+                            </figure>
 
-        <!-- 5.4 Resultados e Impacto de las variables -->
-        <section>
-            <h2>Results and Variable Impact</h2>
-            <p>
-                Training XGBoost, LightGBM, CatBoost, and a neural net with embeddings showcased <strong>CatBoost</strong> as the top performer (MAE ~8.875 hours). Categorical features were efficiently handled without one-hot encoding. 
-            </p>
-            <p>
-                <strong>SHAP Analysis:</strong> Key contributors included <em>NombrePrestadorSede</em> (+8 hours) and <em>HospitalOccupancy</em> (~+6 hours). Meanwhile, <em>Sexo</em>, <em>ZonaResidencia</em>, or specific diagnosis columns had minimal effect (minus 0.5 hours). Removing them only raised MAE by +5 min, improving real-world usability.
-            </p>
-            <figure>
-                <img src="images/figure8_shap.jpg" alt="Figura 8: SHAP summary plot" />
-                <figcaption>Figura 8: SHAP plot showing top variables in CatBoost.</figcaption>
-            </figure>
-        </section>
+                            <p>
+                                <strong>External Causes &amp; Gender:</strong> Accident-related issues (more prevalent in younger males), while suspicion of abuse or sexual violence predominantly affected younger females. 
+                            </p>
+                            <p>
+                                <strong>IPS Dynamics:</strong> Certain IPS specialized in mental health (e.g., METROSALUD - Unidad de Salud Mental) had average stays beyond 400 hours. Private clinics (e.g., Clínica Las Américas) displayed high occupancy (~177 patients) and lengthy LOS (~236 hours). 
+                            </p>
+                            <p>
+                                <strong>Distribution of Occupancy by Day, Month, and Hour:</strong> As shown in <strong>Figura 3</strong> (placeholder), differences by weekday are minimal, though weekends slightly decrease. March and April present higher average occupancy, possibly tied to increased respiratory conditions. A notable peak at 2:00 p.m. (~700 patients) arises from administrative batch entries (e.g., Virrey Solís IPS). 
+                            </p>
+                            <figure>
+                                <img src="images/figuratres.jpg" alt="Figura 3: Ocupación promedio por día, mes y hora" />
+                                <figcaption>Figura 3: Average occupancy distribution by weekday, month, and hour (placeholder).</figcaption>
+                            </figure>
+                        </section>
 
-        <!-- Implementation of the web page -->
-        <section>
-            <h2>Implementation</h2>
-            <h3>Flujo de la Página Web</h3>
-            <p>
-                An interactive web page was developed for administrative staff and resource coordinators to manage and predict patient stay times:
-            </p>
-            <ol>
-                <li><strong>Predicción del Tiempo de Estancia (Individual):</strong> Users input patient data (diagnoses, occupancy, IPS) for an immediate LOS prediction. SHAP-based visuals show influential factors.</li>
-                <li><strong>Predicción del Tiempo de Estancia (Múltiple):</strong> Batch CSV uploads for multiple patients. Stats like mean, min, max, and top N extremes help optimize processes.</li>
-                <li><strong>Estadísticas Pacientes:</strong> Disease impact analysis (diagnostics by month, day, year, age group, sex, external cause) to plan resources and identify trends.</li>
-                <li><strong>Estadísticas de Ocupación:</strong> Graphs indicating acceleration and saturation points in hospital occupancy to guide bed/personal allocation.</li>
-            </ol>
-            <p>
-                <em>Figura 13</em> (placeholder) diagrams the logical flow: after login, users navigate via a sidebar to these functionalities.  
-            </p>
-            <figure>
-                <img src="images/figure13_pageFlow.jpg" alt="Figura 13: Page Flow Diagram" />
-                <figcaption>Figura 13: Diagram of page flow for the web application.</figcaption>
-            </figure>
+                        <!-- 4.5 Feature Engineering -->
+                        <section>
+                            <h2>Feature Engineering</h2>
+                            <p>
+                                We unified age measurements (months/days) to years, removing rows beyond 110 years. Categorical columns were recast to strings, discarding invalid municipality data and “I” in <em>Sexo</em>. A lower limit of 30 minutes was enforced for LOS, removing ~4.86% of unrealistic short stays.
+                            </p>
+                            <p>
+                                A crucial addition was <strong>HospitalOccupancy</strong>, aggregating daily bed usage by hospital. Non-essential columns (e.g., raw “Codigo” columns, timestamps) were dropped after computing LOS. 
+                            </p>
+                        </section>
 
-            <h3>Modelado de datos</h3>
-            <p>
-                <em>Figura 14</em> (placeholder) depicts an ER diagram with <strong>USERS</strong>, <strong>IPS</strong>, and <strong>REGISTROSIPS</strong>. Each user references an IPS; REGISTROSIPS holds patient details, ensuring traceability and scalable data organization.
-            </p>
-            <figure>
-                <img src="images/figure14_ERdiagram.jpg" alt="Figura 14: ER Diagram" />
-                <figcaption>Figura 14: Entity-Relationship diagram for the system.</figcaption>
-            </figure>
+                        <!-- 5.4 Resultados e Impacto de las variables -->
+                        <section>
+                            <h2>Results and Variable Impact</h2>
+                            <p>
+                                Training XGBoost, LightGBM, CatBoost, and a neural net with embeddings showcased <strong>CatBoost</strong> as the top performer (MAE ~8.875 hours). Categorical features were efficiently handled without one-hot encoding. 
+                            </p>
+                            <p>
+                                <strong>SHAP Analysis:</strong> Key contributors included <em>NombrePrestadorSede</em> (+8 hours) and <em>HospitalOccupancy</em> (~+6 hours). Meanwhile, <em>Sexo</em>, <em>ZonaResidencia</em>, or specific diagnosis columns had minimal effect (minus 0.5 hours). Removing them only raised MAE by +5 min, improving real-world usability.
+                            </p>
+                        </section>
 
-            <h3>Arquitectura del Sistema</h3>
-            <p>
-                Hosted on AWS S3 (frontend) and AWS EC2 (Flask backend, databases). Users authenticate via Firebase, send requests to the EC2 server, which loads the CatBoost model. Data is fetched from local databases, then results and SHAP analyses are returned to the frontend. 
-            </p>
-            <figure>
-                <img src="images/figure15_SequenceDiagram.jpg" alt="Figura 15: Sequence Diagram" />
-                <figcaption>Figura 15: Sequence diagram of system collaboration.</figcaption>
-            </figure>
+                        <!-- 4.6 Extended Exploratory Analysis (incluye Occupancy Impact y figura 7) -->
+                        <section>
+                            <h2>Extended Exploratory Analysis</h2>
+                            <p>
+                                <strong>Occupancy Impact:</strong> Once <em>HospitalOccupancy</em> was created, we analyzed how daily bed usage affects LOS. Polynomials fitted to SHAP values revealed acceleration ~679 beds (private) vs. ~587 beds (public), then saturation at ~1,064 (private) and ~653 (public). Public IPS showed average stays of 37.28 hours vs. 19.98 hours in private, though private centers reached occupancy peaks of 1,832 patients. 
+                            </p>
+                            <figure>
+                                <img src="images/figuracinco.jpg" alt="Figura 4: Occupancy Acceleration and Saturation Points" />
+                                <figcaption>Figura 4: Generic illustration of occupancy vs. LOS impact (public vs. private).</figcaption>
+                            </figure>
 
-            <h3>Seguridad y Privacidad</h3>
-            <ul>
-                <li><strong>Autenticación de Usuarios:</strong> Firebase ensures only registered staff can access or modify relevant data.</li>
-                <li><strong>Cifrado y Almacenamiento Seguro:</strong> EC2 + S3 use encryption in transit/at rest; strict IAM roles limit inbound/outbound connections.</li>
-                <li><strong>Control de Credenciales:</strong> Sensitive keys remain environment variables, never exposed in source code.</li>
-            </ul>
-        </section>
+                            <p>
+                                <strong>IPS Public vs Private:</strong> Occupancy analysis underscores the heavier burden in some public IPS, but private IPS can spike higher in peak times. This interplay highlights resource allocation challenges across the system.
+                            </p>
+                        </section>
 
-        <!-- Post-Thesis Improvements -->
-        <section>
-            <h2>Post-Thesis Improvements</h2>
-            <p>
-                After the thesis presentation, several enhancements were made:
-            </p>
-            <ul>
-                <li><strong>Cognito instead of Firebase Authentication:</strong> Migration to Amazon Cognito improved security, offered passwordless login features, and seamlessly integrated with other AWS services.</li>
-                <li><strong>HTTPS Deployment via CloudFront:</strong> Instead of the S3 website endpoint (HTTP only), the site is now behind AWS CloudFront with an SSL certificate, ensuring secure connections.</li>
-                <li><strong>Further Architecture Refinements:</strong> Additional environment variables and IAM roles locked down resources, meeting HIPAA-like requirements for patient data. Monitoring with Amazon CloudWatch was also introduced for performance metrics.</li>
-            </ul>
-            <p>
-                These steps ensure a robust, scalable, and secure platform that can adapt to changing healthcare demands.
-            </p>
-        </section>
+                        <!-- Implementation of the web page -->
+                        <section>
+                            <h2>Implementation</h2>
+                            <h3>Flujo de la Página Web</h3>
+                            <p>
+                                An interactive web page was developed for administrative staff and resource coordinators to manage and predict patient stay times:
+                            </p>
+                            <ol>
+                                <li><strong>Predicción del Tiempo de Estancia (Individual):</strong> Users input patient data (diagnoses, occupancy, IPS) for an immediate LOS prediction. SHAP-based visuals show influential factors.</li>
+                                <li><strong>Predicción del Tiempo de Estancia (Múltiple):</strong> Batch CSV uploads for multiple patients. Stats like mean, min, max, and top N extremes help optimize processes.</li>
+                                <li><strong>Estadísticas Pacientes:</strong> Disease impact analysis (diagnostics by month, day, year, age group, sex, external cause) to plan resources and identify trends.</li>
+                                <li><strong>Estadísticas de Ocupación:</strong> Graphs indicating acceleration and saturation points in hospital occupancy to guide bed/personal allocation.</li>
+                            </ol>
+                            <p>
+                                <em>Figura 5</em> (placeholder) diagrams the logical flow: after login, users navigate via a sidebar to these functionalities.  
+                            </p>
+                            <figure>
+                                <img src="images/figuraseis.jpg" alt="Figura 5: Page Flow Diagram" />
+                                <figcaption>Figura 5: Diagram of page flow for the web application.</figcaption>
+                            </figure>
 
-        <!-- Thesis grade image -->
-        <section>
-            <h2>Thesis Grade Certification</h2>
-            <p>
-                The final project was awarded a <strong>5.0</strong> (top score) in all evaluation criteria, confirming both technical rigor and practical impact.
-            </p>
-            <figure>
-                <img src="images/figure16_thesisGrade.jpg" alt="Figura 16: Thesis Grade Proof" />
-                <figcaption>Figura 16: Screenshot verifying a grade of 5.0 for the thesis (placeholder).</figcaption>
-            </figure>
-        </section>
+                            <h3>Modelado de datos</h3>
+                            <p>
+                                <em>Figura 6</em> (placeholder) depicts an ER diagram with <strong>USERS</strong>, <strong>IPS</strong>, and <strong>REGISTROSIPS</strong>. Each user references an IPS; REGISTROSIPS holds patient details, ensuring traceability and scalable data organization.
+                            </p>
+                            <figure>
+                                <img src="images/figurasiete.jpg" alt="Figura 6: ER Diagram" />
+                                <figcaption>Figura 6: Entity-Relationship diagram for the system.</figcaption>
+                            </figure>
 
-        <!-- Referencias -->
-        <section>
-            <h2>References</h2>
-            <p>
-                <strong>ADRES (2022).</strong> Entidades SGSSS. Disponible en: 
-                <a href="https://www.adres.gov.co/entidades-territoriales/bdua/Entidades%20SGSSS/ENTIDADES_SGSSS_2022_ADRES.pdf" target="_blank">Link</a><br>
-                <strong>Alcald&iacute;a de Medell&iacute;n (2023).</strong> Registro Prestaci&oacute;n Servicios M&eacute;dicos en Urgencia con Observaci&oacute;n. Disponible en: 
-                <a href="https://medata.gov.co/dataset/1-026-22-000128" target="_blank">Link</a><br>
-                <strong>Nascimento et al. (2019).</strong> Understanding Development Process of Machine Learning Systems: Challenges and Solutions. ACM/IEEE Symposium on Empirical Software Engineering and Measurement.<br>
-                <strong>Ghosh et al. (2018).</strong> A Comprehensive Review of Tools for Exploratory Analysis of Tabular Industrial Datasets. Visual Informatics. 
-                <a href="https://doi.org/10.1016/j.visinf.2018.12.004" target="_blank">Link</a><br>
-                <strong>Prokhorenkova et al. (2019).</strong> CatBoost: Unbiased Boosting with Categorical Features. arXiv. 
-                <a href="https://doi.org/10.48550/arXiv.1706.09516" target="_blank">Link</a>
-            </p>
-        </section>
+                            <h3>Arquitectura del Sistema</h3>
+                            <p>
+                                Hosted on AWS S3 (frontend) and AWS EC2 (Flask backend, databases). Users authenticate via Firebase, send requests to the EC2 server, which loads the CatBoost model. Data is fetched from local databases, then results and SHAP analyses are returned to the frontend. 
+                            </p>
+                            <figure>
+                                <img src="images/figuraocho.jpg" alt="Figura 7: Sequence Diagram" />
+                                <figcaption>Figura 7: Sequence diagram of system collaboration.</figcaption>
+                            </figure>
 
+                            <h3>Seguridad y Privacidad</h3>
+                            <ul>
+                                <li><strong>Autenticación de Usuarios:</strong> Firebase ensures only registered staff can access or modify relevant data.</li>
+                                <li><strong>Cifrado y Almacenamiento Seguro:</strong> EC2 + S3 use encryption in transit/at rest; strict IAM roles limit inbound/outbound connections.</li>
+                                <li><strong>Control de Credenciales:</strong> Sensitive keys remain environment variables, never exposed in source code.</li>
+                            </ul>
+                        </section>
 
-    </div>
-</div>
+                        <!-- Post-Thesis Improvements -->
+                        <section>
+                            <h2>Post-Thesis Improvements</h2>
+                            <p>
+                                After the thesis presentation, several enhancements were made:
+                            </p>
+                            <ul>
+                                <li><strong>Cognito instead of Firebase Authentication:</strong> Migration to Amazon Cognito improved security, offered passwordless login features, and seamlessly integrated with other AWS services.</li>
+                                <li><strong>HTTPS Deployment via CloudFront:</strong> Instead of the S3 website endpoint (HTTP only), the site is now behind AWS CloudFront with an SSL certificate, ensuring secure connections.</li>
+                                <li><strong>Further Architecture Refinements:</strong> Additional environment variables and IAM roles locked down resources, meeting HIPAA-like requirements for patient data. Monitoring with Amazon CloudWatch was also introduced for performance metrics.</li>
+                            </ul>
+                            <p>
+                                These steps ensure a robust, scalable, and secure platform that can adapt to changing healthcare demands.
+                            </p>
+                        </section>
 
-<!-- Footer -->
-<footer id="footer">
-    <div class="inner">
-        <p>&copy; 2024 Hospital Stay Prediction System. All rights reserved.</p>
-    </div>
-</footer>
+                        <!-- Thesis grade image -->
+                        <section>
+                            <h2>Thesis Grade Certification</h2>
+                            <p>
+                                The final project was awarded a <strong>5.0</strong> (top score) in all evaluation criteria, confirming both technical rigor and practical impact.
+                            </p>
+                            <figure>
+                                <img src="images/calificaciongrado_uno.jpg" alt="Figura 16: Thesis Grade Proof" />
+                                <img src="images/calificaciongrado_dos.jpg" alt="Figura 18: Thesis Grade Proof" />
+                                <figcaption>Figura 16: Screenshot verifying a grade of 5.0 for the thesis (placeholder).</figcaption>
+                            </figure>
+                        </section>
 
-<!-- Scripts -->
-<script src="assets/js/jquery.min.js"></script>
-<script src="assets/js/browser.min.js"></script>
-<script src="assets/js/breakpoints.min.js"></script>
-<script src="assets/js/util.js"></script>
-<script src="assets/js/main.js"></script>
+                        <!-- Referencias -->
+                        <section>
+                            <h2>References</h2>
+                            <p>
+                                <strong>ADRES (2022).</strong> Entidades SGSSS. Disponible en: 
+                                <a href="https://www.adres.gov.co/entidades-territoriales/bdua/Entidades%20SGSSS/ENTIDADES_SGSSS_2022_ADRES.pdf" target="_blank">Link</a><br>
+                                <strong>Alcald&iacute;a de Medell&iacute;n (2023).</strong> Registro Prestaci&oacute;n Servicios M&eacute;dicos en Urgencia con Observaci&oacute;n. Disponible en: 
+                                <a href="https://medata.gov.co/dataset/1-026-22-000128" target="_blank">Link</a><br>
+                                <strong>Nascimento et al. (2019).</strong> Understanding Development Process of Machine Learning Systems: Challenges and Solutions. ACM/IEEE Symposium on Empirical Software Engineering and Measurement.<br>
+                                <strong>Ghosh et al. (2018).</strong> A Comprehensive Review of Tools for Exploratory Analysis of Tabular Industrial Datasets. Visual Informatics. 
+                                <a href="https://doi.org/10.1016/j.visinf.2018.12.004" target="_blank">Link</a><br>
+                                <strong>Prokhorenkova et al. (2019).</strong> CatBoost: Unbiased Boosting with Categorical Features. arXiv. 
+                                <a href="https://doi.org/10.48550/arXiv.1706.09516" target="_blank">Link</a>
+                            </p>
+                        </section>
+
+                    </div>
+                </div>
+
+                <!-- Footer (snippet 1) -->
+                <footer id="footer">
+                    <div class="inner">
+                        <p>&copy; 2024 Hospital Stay Prediction System. All rights reserved.</p>
+                    </div>
+                </footer>
+
+                <!-- Scripts (snippet 1) -->
+                <script src="assets/js/jquery.min.js"></script>
+                <script src="assets/js/browser.min.js"></script>
+                <script src="assets/js/breakpoints.min.js"></script>
+                <script src="assets/js/util.js"></script>
+                <script src="assets/js/main.js"></script>
+
+                </body>
+                </html>
+
+                <!-- =====================  AQUI TERMINA TODO EL PRIMER SNIPPET  ===================== -->
+
+            </div>
+        </div>
+
+        <!-- Footer (Phantom) -->
+        <footer id="footer">
+            <div class="inner">
+                <section>
+                    <h2>Follow</h2>
+                    <ul class="icons">
+                        <li><a href="https://www.linkedin.com/in/juan-pablo-cancelado-caro/" class="icon brands style2 fa-linkedin"><span class="label">Linkedin</span></a></li>
+                        <li><a href="https://github.com/Juanxtron/Juanxtron" class="icon brands style2 fa-github"><span class="label">GitHub</span></a></li>
+                    </ul>
+                </section>
+                <ul class="copyright">
+                </ul>
+            </div>
+        </footer>
+
+    </div><!-- /#wrapper -->
+
+    <!-- Scripts base de Phantom (se repiten para respetar literalidad del 2do snippet) -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
 
 </body>
 </html>
+
 
 
